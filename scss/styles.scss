@@ -1,2 +1,13 @@
 @import 'partials/reset';
 @import 'partials/clearfix';
+@import 'partials/colors';
+
+.ground{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: $grass;
+  height: 250px;
+  width: 100%;
+  bottom: 0;
+}
