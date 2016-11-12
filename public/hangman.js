@@ -1,5 +1,5 @@
 (function () {
-    var validLetters, words, guessInput, guess, guessButton, guessedLetter, matchedLetter, output, health, letters, currentWord, numMatchedLetter;
+    var validLetters, words, guessInput, guess, guessButton, guessedLetter, matchedLetter, output, health, letters, currentWord, numMatchedLetter, hp, outcomes;
 
     var wordBank = {
       'plants': ['peashooter', 'sunflower', 'cherry bomb', 'potato mine', 'chomper'],
@@ -12,9 +12,9 @@
     function setup() {
         /* start config options */
         validLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-        var hp = 5;
+        hp = 5;
         words = ['conehead', 'pole vaulting', 'buckethead', 'newspaper', 'dancing'];
-        var outcomes = {
+        outcomes = {
           win: "I'm ALIVE!",
           lose: "I withered away :'(",
           guessed: 'Try another letter, already guessed',
