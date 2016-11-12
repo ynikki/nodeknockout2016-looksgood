@@ -2,8 +2,12 @@
 @import 'partials/clearfix';
 @import 'partials/colors';
 
-body{
-  background-color: $sky;
+.container{
+  background: linear-gradient($sky, $skyBottom);
+  background: -webkit-linear-gradient($sky, $skyBottom);
+  background: -o-linear-gradient($sky, $skyBottom);
+  background: -moz-linear-gradient($sky, $skyBottom);
+  height: 100vh;
 }
 progress{
   -webkit-appearance: none;
