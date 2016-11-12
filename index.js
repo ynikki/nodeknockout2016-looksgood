@@ -1,5 +1,6 @@
-var express = require('express')
-var app = express()
+var express = require('express');
+var app = express();
+var path = require('path');
 
 app.set('view engine', 'pug');
 app.set('views', path.resolve(__dirname, 'views'));
