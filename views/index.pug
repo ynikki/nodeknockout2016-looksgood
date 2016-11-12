@@ -5,6 +5,15 @@ html(lang="en")
     title 2016 Node Knockout
     link(href='/css/styles.css', rel='stylesheet')
   body
+    div#output
+    div#health
+    div#alphabets
+    div.dropdown
+      select(id="categories")
+        option(value="") Select a category
+        option(value="plants") Plants
+        option(value="zombies") Zombies
+        input(type='submit' value='Submit')
     div.container
       div.cloudOne
       div.cloudTwo
@@ -18,3 +27,4 @@ html(lang="en")
       p(id="man")
       p(id="output" class="output")
       div.ground
+    script(src='/hangman.js')
