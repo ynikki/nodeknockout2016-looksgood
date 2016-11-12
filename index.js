@@ -1,6 +1,9 @@
 var express = require('express')
 var app = express()
 
+app.set('view engine', 'pug');
+app.set('views', path.resolve(__dirname, 'views'));
+
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 
