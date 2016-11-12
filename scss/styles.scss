@@ -1,2 +1,45 @@
 @import 'partials/reset';
 @import 'partials/clearfix';
+@import 'partials/colors';
+
+.container{
+  background: linear-gradient($sky, $skyBottom);
+  background: -webkit-linear-gradient($sky, $skyBottom);
+  background: -o-linear-gradient($sky, $skyBottom);
+  background: -moz-linear-gradient($sky, $skyBottom);
+  height: 100vh;
+}
+progress{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 2px;
+  width: 250px;
+  height: 20px;
+}
+progress[value]::-webkit-progress-bar{
+  background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+progress[value]::-webkit-progress-value{
+  background-color: $progressBar;
+  border-radius: 2px;
+  background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+.cloudOne{
+  background-image: url('/images/clouds.png');
+  background-repeat: no-repeat;
+  width: 133px;
+  height: 72px;
+}
+.ground{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: $grass;
+  height: 250px;
+  width: 100%;
+  bottom: 0;
+}
