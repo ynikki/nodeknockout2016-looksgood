@@ -1,6 +1,12 @@
 window.onload = function () {
 
-  var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  // var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
+  // var alphabet = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm'];
+
+  var keyRow1 = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'];
+  var keyRow2 = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'];
+  var keyRow3 = ['z', 'x', 'c', 'v', 'b', 'n', 'm'];
 
   var categories;         // Array of topics
   var chosenCategory;     // Selected catagory
@@ -14,7 +20,7 @@ window.onload = function () {
 
   // Get elements
   var showhp = document.getElementById("myhp");
-  var showCatagory = document.getElementById("scatagory");
+  var showCatagory = document.getElementById("categories");
   var getHint = document.getElementById("hint");
   var showClue = document.getElementById("clue");
 
@@ -39,27 +45,71 @@ window.onload = function () {
   // create alphabet ul
   var buttons = function () {
     myButtons = document.getElementById('letter-buttons');
-    letters = document.createElement('ul');
+    letters1 = document.createElement('ul');
+    letters2 = document.createElement('ul');
+    letters3 = document.createElement('ul');
 
-    for (var i = 0; i < alphabet.length; i++) {
-      letters.id = 'alphabet';
+    for (var i = 0; i < keyRow1.length; i++) {
+      letters1.className = 'keyRow';
       list = document.createElement('li');
       list.id = 'letter';
-      list.innerHTML = alphabet[i];
+      list.innerHTML = keyRow1[i];
       check();
-      myButtons.appendChild(letters);
-      letters.appendChild(list);
+      myButtons.appendChild(letters1);
+      letters1.appendChild(list);
     }
+    for (var j = 0; j < keyRow2.length; j++) {
+      letters2.className = 'keyRow';
+      list = document.createElement('li');
+      list.id = 'letter';
+      list.innerHTML = keyRow2[j];
+      check();
+      myButtons.appendChild(letters2);
+      letters2.appendChild(list);
+    }
+    for (var k = 0; k < keyRow3.length; k++) {
+      letters3.className = 'keyRow';
+      list = document.createElement('li');
+      list.id = 'letter';
+      list.innerHTML = keyRow3[k];
+      check();
+      myButtons.appendChild(letters3);
+      letters3.appendChild(list);
+    }
+
   }
+
+
+  document.getElementById("categories").onchange = function() {
+    var catValue = document.getElementById("categories").value;
+    // console.log(catValue);
+    correct.parentNode.removeChild(correct);
+    letters.parentNode.removeChild(letters);
+    showClue.innerHTML = "";
+
+    play();
+  };
 
   // Select Catagory
   var selectCat = function () {
+    var catValue = document.getElementById("categories").value;
+    if (catValue === "Javascript"){
+      catagoryName.innerHTML = "The Chosen Category Is Javascript"
+    }
+    if (catValue === "CSS/HTML"){
+      catagoryName.innerHTML = "The Chosen Category Is CSS/HTML"
+    }
+    if (catValue === "Node.js"){
+      catagoryName.innerHTML = "The Chosen Category Is Node.js"
+    }
     if (chosenCategory === categories[0]) {
-      catagoryName.innerHTML = "The Chosen Category Is Premier League Football Teams";
-    } else if (chosenCategory === categories[1]) {
-      catagoryName.innerHTML = "The Chosen Category Is Films";
-    } else if (chosenCategory === categories[2]) {
-      catagoryName.innerHTML = "The Chosen Category Is Cities";
+      catagoryName.innerHTML = "The Chosen Category Is Javascript";
+    }
+    if (chosenCategory === categories[1]) {
+      catagoryName.innerHTML = "The Chosen Category Is CSS/HTML";
+    }
+    if (chosenCategory === categories[2]) {
+      catagoryName.innerHTML = "The Chosen Category Is Node.js";
     }
   }
 
@@ -128,13 +178,30 @@ window.onload = function () {
 
   // Play
   play = function () {
+
+    var HTMLCategory = document.getElementById("categories").value;
+
     categories = [
-        ["everton", "liverpool", "swansea", "chelsea", "hull", "manchester-city", "newcastle-united"],
-        ["alien", "dirty-harry", "gladiator", "finding-nemo", "jaws"],
-        ["manchester", "milan", "madrid", "amsterdam", "prague"]
+      ['function', 'variable', 'object', 'array', 'parameter'],
+      ['attributes', 'body', 'value', 'selector', 'background-color'],
+      ['hostname', 'port', 'server', 'listen', 'nodejs']
     ];
 
-    chosenCategory = categories[Math.floor(Math.random() * categories.length)];
+    if (HTMLCategory === "Javascript") {
+      var numCategory = 0;
+    }
+    else if (HTMLCategory === "CSS/HTML") {
+      var numCategory = 1;
+    }
+    else if (HTMLCategory === "Node.js"){
+      var numCategory = 2;
+    }
+    else {
+      var numCategory = Math.floor(Math.random() * categories.length);
+    }
+
+    chosenCategory = categories[numCategory];
+
     word = chosenCategory[Math.floor(Math.random() * chosenCategory.length)];
     word = word.replace(/\s/g, "-");
     console.log(word);
@@ -144,6 +211,7 @@ window.onload = function () {
     hp = 5;
     counter = 0;
     space = 0;
+
     result();
     comments();
     selectCat();
@@ -153,9 +221,9 @@ window.onload = function () {
   // Hint
   hint.onclick = function() {
     hints = [
-      ["Based in Mersyside", "Based in Mersyside", "First Welsh team to reach the Premier Leauge", "Owned by A russian Billionaire", "Once managed by Phil Brown", "2013 FA Cup runners up", "Gazza's first club"],
-      ["Science-Fiction horror film", "1971 American action film", "Historical drama", "Anamated Fish", "Giant great white shark"],
-      ["Northern city in the UK", "Home of AC and Inter", "Spanish capital", "Netherlands capital", "Czech Republic capital"]
+      ['Set of statements and performs a task', 'Container for data', 'Has keys and values', 'Lists of values', 'Arguments object'],
+      ['Additional information for elements', 'Has contents of HTML document', 'Define property', 'Patterns to grab elements', 'Can apply the rainbow'],
+      ['IP address', 'Number server uses for url', 'Processes requests', 'Hear', 'Can build network applications']
     ];
 
     var catagoryIndex = categories.indexOf(chosenCategory);

@@ -46,14 +46,6 @@
   transition: all 0.5s ease-in-out;
 }
 
-@mixin clear {
-  &:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-}
-
  @mixin box-size {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -76,11 +68,4 @@
   opacity:0.4;
   filter:alpha(opacity=40);
   @include fade;
-}
-
-@mixin corners ($radius) {
-  -moz-border-radius: $radius;
-  -webkit-border-radius: $radius;
-  border-radius: $radius;
-  -khtml-border-radius: $radius;
 }
