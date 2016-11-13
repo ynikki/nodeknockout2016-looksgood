@@ -340,54 +340,39 @@ p{
   }
 }
 
-.wrappper{
-  @include clear;
-  width:100%;
-  margin:0 auto;
-}
-
 // ***Letter Buttons*** //
-.keyRow {
-  @include clear;
-  margin:15px auto;
-  padding:0;
-  max-width:900px;
-}
-
-.keyRow li {
-  float:left;
-  margin: 0 10px 10px 0;
-  list-style:none;
-  width:35px;
-  height:30px;
-  padding-top:10px;
-  background:$white;
-  color:$green;
-  cursor:pointer;
-  border: solid 1px $white;
-  @include corners(5px);
-  &:hover{
-    background:$green;
+.alphabet-container{
+  margin: 15px auto;
+  #alphabet {
+    margin: 0 auto;
+    max-width: 800px;
+    display: flex;
+    flex-flow: row wrap;
+  }
+  #alphabet li {
+    flex: 0 0 35px;
+    margin: 5px;
+    height:35px;
+    padding-top:8px;
+    font-size:26px;
+    background:$white;
+    color:$green;
+    cursor:pointer;
     border: solid 1px $white;
-    color:$white;
+    border-radius: 4px;
+    &:hover{
+      background:$green;
+      border: solid 1px $white;
+      color:$white;
+    }
   }
-}
-.active {
-  @include opacity;
-  cursor:default;
-  &:hover{
-    @include fade;
+  .active {
     @include opacity;
-  }
-}
-@media (max-width: 767px) {
-  .keyRow {
-    padding:0 0 0 15px;
-  }
-}
-@media (max-width: 480px) {
-  .keyRow {
-    padding:0 0 0 25px;
+    cursor: pointer;
+    &:hover{
+      @include fade;
+      @include opacity;
+    }
   }
 }
 
@@ -426,4 +411,3 @@ button{
     color:$green;
   }
 }
-

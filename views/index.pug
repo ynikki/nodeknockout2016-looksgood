@@ -2,6 +2,7 @@ doctype html
 html(lang="en")
   head
     meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
     title Word Garden | 2016 Node Knockout
     link(href='/css/styles.css', rel='stylesheet')
     script(src="https://code.jquery.com/jquery-2.2.4.min.js")
@@ -26,19 +27,18 @@ html(lang="en")
         p(id="catagoryName" class="word-category")
         div.dropdown
           select(id="categories")
-            option(value="") Select a category
+            option(value="" selected="true" disabled="disabled") Select a category
             option#categories(value="Javascript") Javascript
             option#categories(value="CSS/HTML") CSS/HTML
             option#categories(value="Node.js") Node.js
         p#clue
-        button#reset Play again
       div.wrapper
         div#buttons
         div#hold
         div(id="letter-buttons" class="alphabet-container")
         button#hint Hint
-        button#reset Play again
-        p#clue
+        button#reset Play Again
+        p(id="clue" class="word-clue") Clue-
       div.flower-container
         div.flower-wrapper
           div.petal-wrapper
@@ -53,4 +53,6 @@ html(lang="en")
               div(id="rightEye" class="eye")
               div.mouth
           span(class="stem")
+      div.footer
+        p Copyright &copy; 2016 Word Garden. All Rights Reserved
     script(src='/hangman.js')

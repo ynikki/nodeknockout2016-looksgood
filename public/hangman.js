@@ -84,7 +84,9 @@ window.onload = function () {
     var catValue = document.getElementById("categories").value;
     // console.log(catValue);
     correct.parentNode.removeChild(correct);
-    letters.parentNode.removeChild(letters);
+    letters1.parentNode.removeChild(letters1);
+    letters2.parentNode.removeChild(letters2);
+    letters3.parentNode.removeChild(letters3);
     showClue.innerHTML = "";
 
     play();
