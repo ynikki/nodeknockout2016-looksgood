@@ -194,9 +194,9 @@ body {
 
 .flower-container {
   position: relative;
-  top: -175px;
+  top: -165px;
   margin-bottom: -175px;
-  margin-left: calc(50% - 120px); }
+  margin-left: calc(50% - 140px); }
 
 .flower-wrapper {
   width: 15em;
@@ -495,8 +495,9 @@ button {
   color: gray; }
 
 .footer {
-  padding: 10px 0;
+  padding: 10px;
   background-color: #647015; }
   .footer p {
     color: #000000;
+    line-height: 1.2;
     font-size: 0.6rem; }
