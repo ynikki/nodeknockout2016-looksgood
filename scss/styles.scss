@@ -16,7 +16,7 @@
   box-sizing: border-box;
 }
 body {
-  background: $green;
+  // background: $green;
   font-family: 'Arcade';
   color: $white;
   text-align: center;
@@ -35,6 +35,16 @@ p{
   background: -moz-linear-gradient($light-sky 0%, $white 100%);
   background: -o-linear-gradient($light-sky 0%, $white 100%);
   background: linear-gradient($light-sky 0%, $white 100%);
+  padding: 25px 0 10px;
+  overflow-x: hidden;
+}
+
+.sad-background{
+  background: $light-sky;
+  background: -webkit-linear-gradient($gray-sky 0%, $white 100%);
+  background: -moz-linear-gradient($gray-sky 0%, $white 100%);
+  background: -o-linear-gradient($gray-sky 0%, $white 100%);
+  background: linear-gradient($gray-sky 0%, $white 100%);
   padding: 25px 0 10px;
   overflow-x: hidden;
 }
@@ -136,22 +146,15 @@ p{
 }
 
 // ***Grass Artwork*** //
-.ground-container{
-  bottom: 0;
+.grass-container{
+  background-color: $white;
 }
 .grass{
   background-image: url('/images/grass.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 200px;
-}
-.ground{
-  left: 0;
-  background-color: $grass;
-  height: 250px;
-  width: 100%;
-  bottom: 0;
+  height: 100px;
 }
 
 // ***Flower Artwork*** //
@@ -287,6 +290,9 @@ p{
 /////////////////////////////////////
 /////      GAME  CONTAINER      /////
 /////////////////////////////////////
+.game-container{
+  background-color: $grass;
+}
 // ***Progress Bar*** //
 progress{
   -webkit-appearance: none;
