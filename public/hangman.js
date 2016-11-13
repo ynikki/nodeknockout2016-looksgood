@@ -282,6 +282,11 @@ window.onload = function () {
     if (!win) {
       var cloud = document.getElementById('cloud');
       cloud.className = 'sad-background';
+    }else{
+      if (win){
+      var smile = document.getElementById('mouth');
+      smile.removeAttribute('style');
+      }
     }
     window.onkeypress = function(){
       return;
