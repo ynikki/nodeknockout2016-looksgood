@@ -150,24 +150,6 @@ window.onload = function () {
         hp -= 1;
         lifeBar.value--;
         flowerPetals();
-        // if(lifeBar.value === 4){
-        //   $("#petalOne").fadeOut(500);
-        // }else if(lifeBar.value === 3){
-        //   $("#petalTwo").fadeOut(500);
-        // }else if(lifeBar.value === 2){
-        //   $("#petalThree").fadeOut(500);
-        //   unhappyFace.style.transform = "rotate(180deg)";
-        //   unhappyFace.style.marginTop = "47px";
-        //   unhappyFace.style.transitionTimingFunction = "ease";
-        // }else if(lifeBar.value === 1){
-        //   $("#petalFour").fadeOut(500);
-        // }else if(lifeBar.value === 0) {
-        //   $("#petalFive").fadeOut(500);
-        //   leftEye.style.height = "5px";
-        //   leftEye.style.marginTop = "32px";
-        //   rightEye.style.height = "5px";
-        //   rightEye.style.marginTop = "32px";
-        // }
         comments();
       } else {
         comments();
@@ -201,24 +183,6 @@ window.onload = function () {
         hp -= 1;
         lifeBar.value--;
         flowerPetals();
-        // if(lifeBar.value === 4){
-        //   $("#petalOne").fadeOut(500);
-        // }else if(lifeBar.value === 3){
-        //   $("#petalTwo").fadeOut(500);
-        // }else if(lifeBar.value === 2){
-        //   $("#petalThree").fadeOut(500);
-        //   unhappyFace.style.transform = "rotate(180deg)";
-        //   unhappyFace.style.marginTop = "47px";
-        //   unhappyFace.style.transitionTimingFunction = "ease";
-        // }else if(lifeBar.value === 1){
-        //   $("#petalFour").fadeOut(500);
-        // }else if(lifeBar.value === 0) {
-        //   $("#petalFive").fadeOut(500);
-        //   leftEye.style.height = "5px";
-        //   leftEye.style.marginTop = "32px";
-        //   rightEye.style.height = "5px";
-        //   rightEye.style.marginTop = "32px";
-        // }
         comments();
       } else {
         comments();
@@ -318,7 +282,22 @@ window.onload = function () {
     showClue.innerHTML = "";
     var cloud = document.getElementById('cloud');
       cloud.className = 'cloud-background';
-    var smiles = document.getElementsByClassName('petal');
+    var petal1 = document.getElementById('petalOne');
+      petal1.removeAttribute('style');
+    var petal2 = document.getElementById('petalTwo');
+      petal2.removeAttribute('style');
+    var petal3 = document.getElementById('petalThree');
+      petal3.removeAttribute('style');
+    var petal4 = document.getElementById('petalFour');
+        petal4.removeAttribute('style');
+    var petal5 = document.getElementById('petalFive');
+      petal5.removeAttribute('style');
+    var smile = document.getElementById('mouth');
+      smile.removeAttribute('style');
+    var eyeL = document.getElementById('leftEye');
+      eyeL.removeAttribute('style');
+    var eyeR = document.getElementById('rightEye');
+      eyeR.removeAttribute('style');
     play();
     flowerPetals();
     // createEndImg();
