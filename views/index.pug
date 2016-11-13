@@ -4,6 +4,8 @@ html(lang="en")
     meta(charset="UTF-8")
     title 2016 Node Knockout
     link(href='/css/styles.css', rel='stylesheet')
+    script(src="https://code.jquery.com/jquery-2.2.4.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquerykeyframes/0.0.9/jquery.keyframes.min.js")
   body
     div.container
       div.artwork-container
@@ -12,6 +14,9 @@ html(lang="en")
           div(class="cloud move-2")
           div(class="cloud move-3")
           div(class="cloud move-4")
+        div.ground-container
+          div.grass
+          div.ground
       div.game-container
         progress(id="health" value="5" max="5")
         ul(id="letters")
@@ -49,9 +54,4 @@ html(lang="en")
             div(id="rightEye" class="eye")
             div.mouth
           span(class="stem")
-        div.ground-container
-          div.grass
-          div.ground
     script(src='/hangman.js')
-    script(src="https://code.jquery.com/jquery-2.2.4.min.js")
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquerykeyframes/0.0.9/jquery.keyframes.min.js")

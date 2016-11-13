@@ -4,6 +4,10 @@
 @import 'partials/words';
 @import 'partials/flower';
 
+@font-face {
+  font-family: 'Arcade';
+  src: url("/font/Arcade.ttf"); }
+
 @mixin transformation($tY, $tX, $r, $sk, $sc){
   transform:
     translateY($tY)
@@ -13,12 +17,19 @@
     scale($sc);
 }
 
-// .container{
-//   background: linear-gradient($sky, $skyBottom);
-//   background: -webkit-linear-gradient($sky, $skyBottom);
-//   background: -o-linear-gradient($sky, $skyBottom);
-//   background: -moz-linear-gradient($sky, $skyBottom);
-// }
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background:$green;
+  font-family: 'Arcade';
+  color:$white;
+  height:100%;
+  text-align:center;
+  font-size:18px;
+}
+
 progress{
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -37,10 +48,6 @@ progress[value]::-webkit-progress-value{
   background-color: $progressBar;
   border-radius: 2px;
   background-size: 35px 20px, 100% 100%, 100% 100%;
-}
-
-body {
-  background-color: $white;
 }
 
 // CLOUDS CONTAINER //
@@ -102,9 +109,6 @@ body {
   -moz-transform: scale(0.6);
   transform: scale(0.6);
   opacity: 0.6;
-  // opacity proportional to the size
-  // Speed will also be proportional to the size and opacity
-  // More the speed. Less the time in 's' = seconds
   -webkit-animation: moveclouds 25s linear infinite;
   -moz-animation: moveclouds 25s linear infinite;
   -o-animation: moveclouds 25s linear infinite;
@@ -222,7 +226,7 @@ body {
   background: $petal-col;
   border-radius: 0 50% 50% 50%;
   box-shadow: -2px 2px 20px;
-  box-shadow: -2px -2px 20px rgba(255,255,255,0.5) 
+  box-shadow: -2px -2px 20px rgba(255,255,255,0.5)
     inset,
     0px 0px 2px rgba(0,0,0,0.5);
   box-sizing: border-box;
@@ -298,16 +302,7 @@ body {
   bottom: 0;
 }
 
-/* Variabes */
-$orange: #ffa600;
-$green: #c1d72e;
-$blue: #82d2e5;
-$grey:#f3f3f3;
-$white: #fff;
-$base-color:$green ;
-
 /* Mixin's */
-
 @mixin transition {
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
@@ -351,15 +346,6 @@ $base-color:$green ;
   -webkit-border-radius: $radius;
   border-radius: $radius;
   -khtml-border-radius: $radius;
-}
-
-body {
-  background:$base-color;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  color:$white;
-  height:100%;
-  text-align:center;
-  font-size:18px;
 }
 
 .wrappper{
@@ -409,13 +395,13 @@ p{
   height:30px;
   padding-top:10px;
   background:$white;
-  color:$base-color;
+  color:$green;
   cursor:pointer;
   @include corners(5px);
   border: solid 1px $white;
 
     &:hover{
-      background:$base-color;
+      background:$green;
       border: solid 1px $white;
       color:$white;
     }
@@ -455,7 +441,7 @@ p{
 
 button{
   @include corners (5px);
-  background:$base-color;
+  background:$green;
   color:$white;
   border: solid 1px $white;
   text-decoration:none;
@@ -470,7 +456,7 @@ button{
       @include transition;
       background:$white;
       border: solid 1px $white;
-      color:$base-color;
+      color:$green;
     }
 }
 
