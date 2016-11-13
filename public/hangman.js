@@ -6,7 +6,7 @@ window.onload = function () {
   var chosenCategory;     // Selected catagory
   var getHint ;          // Word getHint
   var word ;              // Selected word
-  var guess ;             // Geuss
+  var guess ;             // guess
   var tries = [ ];      // Stored tries
   var hp ;             // hp
   var counter ;           // Count correct tries
@@ -18,23 +18,6 @@ window.onload = function () {
   var getHint = document.getElementById("hint");
   var showClue = document.getElementById("clue");
   var lifeBar = document.getElementById('health');
-
-
-  // // Create Image When Game Ends
-  // var container = document.getElementById('end-img');
-  // var endImageDiv = document.createElement('div');
-  // endImageDiv.id = 'end-img-div';
-
-  // function createEndImg(){
-  //   endImage = document.createElement('img');
-  //   endImage.id = 'end-game-image';
-  //   endImage.src = '';
-  //   endImageDiv.appendChild(endImage);
-  //   container.appendChild(endImageDiv);
-  //   endImageDiv.appendChild(endImage);
-  //   container.appendChild(endImageDiv);
-  // }
-  // createEndImg();
 
   /// Animating the face when player lost ///
   var unhappyFace = document.getElementById('mouth');
@@ -128,23 +111,23 @@ window.onload = function () {
   // OnKeyPress Function
   function typeAnswer(){
     window.onkeypress = function(){
-      var geuss = (event.key);
+      var guess = (event.key);
       var allKeys = document.getElementsByClassName("letter-keys");
       for (var i = 0; i < allKeys[0].children.length; i++) {
         var settingAttributeHTML = allKeys[0].children[i].innerHTML;
-        if (geuss === settingAttributeHTML){
+        if (guess === settingAttributeHTML){
           var settingAttribute = allKeys[0].children[i];
           settingAttribute.setAttribute("class", "active");
         }
       }
       check();
       for (var i = 0; i < word.length; i++) {
-        if (word[i] === geuss) {
-          tries[i].innerHTML = geuss;
+        if (word[i] === guess) {
+          tries[i].innerHTML = guess;
           counter += 1;
         }
       }
-      var j = (word.indexOf(geuss));
+      var j = (word.indexOf(guess));
       var lifeBar = document.getElementById('health');
       if (j === -1) {
         hp -= 1;
@@ -159,26 +142,21 @@ window.onload = function () {
 
   // OnClick Function
   check = function () {
-    // var lifeBar = document.getElementById('health');
     var unhappyFace = document.getElementById('mouth');
     var leftEye = document.getElementById('leftEye');
     var rightEye = document.getElementById('rightEye');
-    // var firstPetal = document.getElementById('petalOne');
-    // var secondPetal = document.getElementById('petalTwo');
-    // var thirdPetal = document.getElementById('petalThree');
-    // var fourthPetal = document.getElementById('petalFour');
-    // var fifthPetal = document.getElementById('petalFive');
+
     list.onclick = function () {
-      var geuss = (this.innerHTML);
+      var guess = (this.innerHTML);
       this.setAttribute("class", "active");
       this.onclick = null;
       for (var i = 0; i < word.length; i++) {
-        if (word[i] === geuss) {
-          tries[i].innerHTML = geuss;
+        if (word[i] === guess) {
+          tries[i].innerHTML = guess;
           counter += 1;
         }
       }
-      var j = (word.indexOf(geuss));
+      var j = (word.indexOf(guess));
       if (j === -1) {
         hp -= 1;
         lifeBar.value--;
@@ -239,7 +217,6 @@ window.onload = function () {
 
     word = chosenCategory[Math.floor(Math.random() * chosenCategory.length)];
     word = word.replace(/\s/g, "-");
-    console.log(word);
     buttons();
 
     tries = [ ];
@@ -276,7 +253,6 @@ window.onload = function () {
     var x = document.getElementById('end-game-image');
     var lifeBar = document.getElementById('health');
     lifeBar.value='5';
-    // x.parentNode.removeChild(x);
     correct.parentNode.removeChild(correct);
     letters.parentNode.removeChild(letters);
     showClue.innerHTML = "";
@@ -300,20 +276,12 @@ window.onload = function () {
       eyeR.removeAttribute('style');
     play();
     flowerPetals();
-    // createEndImg();
   };
 };
 
 function endGame(win) {
-    // winImg = 'http://plusquotes.com/images/quotes-img/flower-25.jpg';
-    // loseImg = 'http://cms.kienthuc.net.vn/uploaded/vannt/2016_09_23/hoa/nam-mo-thay-hoa-bao-truoc-dieu-gi-trong-tuong-lai-hinh-2.jpg';
     if (!win) {
       var cloud = document.getElementById('cloud');
       cloud.className = 'sad-background';
-      // endImage.src = winImg;
-    // } else {
-      // endImage.src = loseImg;
-      // var cloud = document.getElementById('cloud');
-      // cloud.className = 'sad-background';
     }
 }
