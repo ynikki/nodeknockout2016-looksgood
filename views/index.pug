@@ -18,7 +18,7 @@ html(lang="en")
           div.grass
           div.ground
       div.game-container
-        progress(id="health" value="10" max="10")
+        progress(id="health" value="5" max="5")
         ul(id="letters")
         p(id="man")
         p(id="output" class="output")
@@ -28,13 +28,13 @@ html(lang="en")
         p#catagoryName
         div#health
         div#alphabets
+        p#myhp
         div.dropdown
           select(id="categories")
             option(value="") Select a category
             option(value="plants") Plants
             option(value="zombies") Zombies
             input(type='submit' value='Submit')
-        p#mylives
         p#clue Clue-
         button#reset Play again
       div.wrapper
@@ -50,5 +50,8 @@ html(lang="en")
             div.petal
             div.petal
           div.core
+            div(id="leftEye" class="eye")
+            div(id="rightEye" class="eye")
+            div.mouth
           span(class="stem")
     script(src='/hangman.js')

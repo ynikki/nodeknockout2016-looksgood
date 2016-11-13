@@ -179,6 +179,37 @@ progress[value]::-webkit-progress-value{
   opacity: 1;
 }
 
+.eye{
+  background-color: $eye;
+  width: 15px;
+  height: 20px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 150px;
+  position: absolute;
+  margin-top: 28px;
+}
+#leftEye{
+  margin-left: 15px;
+}
+#rightEye{
+  margin-left: 60px;
+}
+.stem{
+  background: $grass;
+  width: .5em;
+  height: 20em;
+  display: block;
+  position: absolute;
+}
+.mouth{
+  margin-top: -50px;
+  width: 80px;
+  height: 125px;
+  border: solid 4px $eye;
+  margin-left: 5px;
+  border-color: transparent transparent $eye transparent;
+  border-radius: 100px 100px 100px 100px;
+}
 .petal-wrapper{
   position: absolute;
   top: 0;
@@ -264,7 +295,7 @@ progress[value]::-webkit-progress-value{
 }
 .ground{
   left: 0;
-  background-color: $green;
+  background-color: $grass;
   height: 250px;
   width: 100%;
   bottom: 0;
