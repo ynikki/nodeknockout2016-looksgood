@@ -111,12 +111,12 @@ window.onload = function () {
   comments = function () {
     showhp.innerHTML = "You have " + hp + " HP";
     if (hp < 1) {
-      showhp.innerHTML = "I withered away :'(";
+      showhp.innerHTML = "Sorry, try again next time.";
       endGame();
     }
     for (var i = 0; i < tries.length; i++) {
       if (counter + space === tries.length) {
-        showhp.innerHTML = "I'm ALIVE!";
+        showhp.innerHTML = "Good Job!";
         var win = "win";
         endGame(win);
       }
