@@ -358,7 +358,7 @@ body {
   margin: 15px auto;
   .letter-keys {
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 600px;
     display: flex;
     flex-flow: row wrap;
   }
@@ -393,6 +393,7 @@ button{
   background:$green;
   color:$white;
   border: solid 1px $white;
+  border-radius: 5px;
   text-decoration:none;
   cursor:pointer;
   font-family: 'Arcade';
