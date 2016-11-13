@@ -21,6 +21,9 @@ body {
   color: $white;
   text-align: center;
 }
+p{
+  font-size: 1.6em;
+}
 
 /////////////////////////////////////
 /////     ARTWORK CONTAINER     /////
@@ -312,10 +315,10 @@ body {
 /////////////////////////////////////
 .game-container{
   background-color: $grass;
-  padding: 15px;
 }
 // ***Progress Bar*** //
 .progress-container{
+
   progress{
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -335,82 +338,84 @@ body {
     border-radius: 2px;
     background-size: 35px 20px, 100% 100%, 100% 100%;
   }
-  .hp-value{
-    padding: 5px 0;
-    font-size: 1.5rem;
-    color: #ff9c08;
+}
+
+.wrappper{
+  @include clear;
+  width:100%;
+  margin:0 auto;
+}
+
+// ***Letter Buttons*** //
+.keyRow {
+  @include clear;
+  margin:15px auto;
+  padding:0;
+  max-width:900px;
+}
+
+.keyRow li {
+  float:left;
+  margin: 0 10px 10px 0;
+  list-style:none;
+  width:35px;
+  height:30px;
+  padding-top:10px;
+  background:$white;
+  color:$green;
+  cursor:pointer;
+  border: solid 1px $white;
+  @include corners(5px);
+  &:hover{
+    background:$green;
+    border: solid 1px $white;
+    color:$white;
+  }
+}
+.active {
+  @include opacity;
+  cursor:default;
+  &:hover{
+    @include fade;
+    @include opacity;
+  }
+}
+@media (max-width: 767px) {
+  .keyRow {
+    padding:0 0 0 15px;
+  }
+}
+@media (max-width: 480px) {
+  .keyRow {
+    padding:0 0 0 25px;
   }
 }
 
 // ***The Word To Guess*** //
-.word-container{
-  padding: 5px 0;
-  font-size: 2rem;
-  #my-word {
-    margin: 0;
-    display: block;
-    padding: 0;
-    display:block;
-  }
-  #my-word li {
-    position: relative;
-    list-style: none;
-    margin: 0;
-    display: inline-block;
-    padding: 0 10px;
-    font-size:1.6em;
-  }
+#my-word {
+  margin: 0;
+  display: block;
+  padding: 0;
+  display:block;
 }
-.word-category{
-  font-size: 1.25rem;
-}
-
-// ***Letter Buttons*** //
-.alphabet-container{
-  margin: 15px auto;
-  #alphabet {
-    margin: 0 auto;
-    max-width: 800px;
-    display: flex;
-    flex-flow: row wrap;
-  }
-  #alphabet li {
-    flex: 0 0 35px;
-    margin: 5px;
-    height:35px;
-    padding-top:8px;
-    font-size:26px;
-    background:$white;
-    color:$green;
-    cursor:pointer;
-    border: solid 1px $white;
-    border-radius: 4px;
-    &:hover{
-      background:$green;
-      border: solid 1px $white;
-      color:$white;
-    }
-  }
-  .active {
-    @include opacity;
-    cursor: pointer;
-    &:hover{
-      @include fade;
-      @include opacity;
-    }
-  }
+#my-word li {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  display: inline-block;
+  padding: 0 10px;
+  font-size:1.6em;
 }
 
 button{
+  @include corners (5px);
   background:$green;
   color:$white;
-  border-radius: 5px;
   border: solid 1px $white;
   text-decoration:none;
   cursor:pointer;
-  font-family: 'Arcade';
-  font-size: 1.5rem;
-  padding: 14px 10px 10px;
+  font-size:1.2em;
+  padding:18px 10px;
   width:180px;
   margin: 10px;
   outline: none;
@@ -420,8 +425,4 @@ button{
     border: solid 1px $white;
     color:$green;
   }
-}
-
-.word-clue{
-  font-size: 1.5rem;
 }
