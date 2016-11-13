@@ -127,7 +127,11 @@ window.onload = function () {
     var unhappyFace = document.getElementById('mouth');
     var leftEye = document.getElementById('leftEye');
     var rightEye = document.getElementById('rightEye');
-    var petal = document.getElementsByClassName('petal');
+    var firstPetal = document.getElementById('petalOne');
+    var secondPetal = document.getElementById('petalTwo');
+    var thirdPetal = document.getElementById('petalThree');
+    var fourthPetal = document.getElementById('petalFour');
+    var fifthPetal = document.getElementById('petalFive');
     list.onclick = function () {
       var geuss = (this.innerHTML);
       this.setAttribute("class", "active");
@@ -143,11 +147,19 @@ window.onload = function () {
       if (j === -1) {
         hp -= 1;
         lifeBar.value--;
-        if(lifeBar.value === 2){
+        if(lifeBar.value === 4){
+          firstPetal.style.display = "none";
+        }else if(lifeBar.value === 3){
+          secondPetal.style.display = "none";
+        }else if(lifeBar.value === 2){
+          thirdPetal.style.display = "none";
           unhappyFace.style.transform = "rotate(180deg)";
           unhappyFace.style.marginTop = "47px";
           unhappyFace.style.transitionTimingFunction = "ease";
-        } else if(lifeBar.value === 0) {
+        }else if(lifeBar.value === 1){
+          fourthPetal.style.display = "none";
+        }else if(lifeBar.value === 0) {
+          fifthPetal.style.display = "none";
           leftEye.style.height = "5px";
           leftEye.style.marginTop = "32px";
           rightEye.style.height = "5px";
