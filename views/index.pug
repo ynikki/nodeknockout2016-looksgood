@@ -12,8 +12,6 @@ html(lang="en")
           div(class="cloud move-2")
           div(class="cloud move-3")
           div(class="cloud move-4")
-        div.flower-container
-        div.ground-container
       div.game-container
         progress(id="health" value="10" max="10")
         ul(id="letters")
@@ -25,13 +23,32 @@ html(lang="en")
         p#catagoryName
         div#health
         div#alphabets
+        div.dropdown
+          select(id="categories")
+            option(value="") Select a category
+            option(value="plants") Plants
+            option(value="zombies") Zombies
+            input(type='submit' value='Submit')
         p#mylives
         p#clue Clue-
         button#reset Play again
-
       div.wrapper
         div#buttons
         div#hold
         button#hint Hint
-
+      div.flower-container
+        div.flower-wrapper
+          div.petal-wrapper
+            div.petal
+            div.petal
+            div.petal
+            div.petal
+            div.petal
+          div.core
+          span(class="stem")
+        div.ground-container
+          div.grass
+          div.ground
     script(src='/hangman.js')
+    script(src="https://code.jquery.com/jquery-2.2.4.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquerykeyframes/0.0.9/jquery.keyframes.min.js")
