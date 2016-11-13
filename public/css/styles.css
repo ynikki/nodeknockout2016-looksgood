@@ -190,10 +190,12 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100px; }
+  height: 125px; }
 
 .flower-container {
-  position: relative; }
+  position: relative;
+  top: -175px;
+  margin-bottom: -175px; }
 
 .flower-wrapper {
   width: 15em;
@@ -493,7 +495,7 @@ button {
 
 .footer {
   padding: 10px 0;
-  background-color: #76a03f; }
+  background-color: #647015; }
   .footer p {
     color: #000000;
     font-size: 0.6rem; }
