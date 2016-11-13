@@ -55,11 +55,11 @@ window.onload = function () {
   // Select Catagory
   var selectCat = function () {
     if (chosenCategory === categories[0]) {
-      catagoryName.innerHTML = "The Chosen Category Is Premier League Football Teams";
+      catagoryName.innerHTML = "The Category is JavaScript";
     } else if (chosenCategory === categories[1]) {
-      catagoryName.innerHTML = "The Chosen Category Is Films";
+      catagoryName.innerHTML = "The Category is HTML & CSS";
     } else if (chosenCategory === categories[2]) {
-      catagoryName.innerHTML = "The Chosen Category Is Cities";
+      catagoryName.innerHTML = "The Category is Server";
     }
   }
 
@@ -128,10 +128,11 @@ window.onload = function () {
 
   // Play
   play = function () {
+
     categories = [
-        ["everton", "liverpool", "swansea", "chelsea", "hull", "manchester-city", "newcastle-united"],
-        ["alien", "dirty-harry", "gladiator", "finding-nemo", "jaws"],
-        ["manchester", "milan", "madrid", "amsterdam", "prague"]
+      ['function', 'variable', 'object', 'array', 'parameter'],
+      ['attributes', 'body', 'value', 'selector', 'background-color'],
+      ['hostname', 'port', 'server', 'listen', 'nodejs']
     ];
 
     chosenCategory = categories[Math.floor(Math.random() * categories.length)];
@@ -152,10 +153,11 @@ window.onload = function () {
 
   // Hint
   hint.onclick = function() {
+
     hints = [
-      ["Based in Mersyside", "Based in Mersyside", "First Welsh team to reach the Premier Leauge", "Owned by A russian Billionaire", "Once managed by Phil Brown", "2013 FA Cup runners up", "Gazza's first club"],
-      ["Science-Fiction horror film", "1971 American action film", "Historical drama", "Anamated Fish", "Giant great white shark"],
-      ["Northern city in the UK", "Home of AC and Inter", "Spanish capital", "Netherlands capital", "Czech Republic capital"]
+      ['Set of statements and performs a task', 'Container for data', 'Has keys and values', 'Lists of values', 'Arguments object'],
+      ['Additional information for elements', 'Has contents of HTML document', 'Define property', 'Patterns to grab elements', 'Can apply the rainbow'],
+      ['IP address', 'Number server uses for url', 'Processes requests', 'Hear', 'Can build network applications']
     ];
 
     var catagoryIndex = categories.indexOf(chosenCategory);
