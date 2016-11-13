@@ -214,6 +214,15 @@ p{
 #rightEye{
   margin-left: 55px;
 }
+.mouth{
+  margin-top: -52px;
+  width: 80px;
+  height: 125px;
+  border: solid 4px $eye;
+  margin-left: 1px;
+  border-color: transparent transparent $eye transparent;
+  border-radius: 100px 100px 100px 100px;
+}
 
 .stem{
   background: $grass;
@@ -224,15 +233,6 @@ p{
   left: 143px;
   bottom: 230px;
   z-index: -1;
-}
-.mouth{
-  margin-top: -55px;
-  width: 80px;
-  height: 125px;
-  border: solid 4px $eye;
-  margin-left: 1px;
-  border-color: transparent transparent $eye transparent;
-  border-radius: 100px 100px 100px 100px;
 }
 .petal-wrapper{
   position: absolute;
