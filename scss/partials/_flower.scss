@@ -82,7 +82,7 @@ $ch: $cw;
 $r: $cw / 2;
 
 /* calculate the diagonal */
-$old-d: $w / 3;
+$old-d: $w / 5;
 $DB: $old-d / 2;
 $s: sqrt(2) *  $DB;
 $CB: $s / 2 * (sqrt(2) - 1);
