@@ -41,7 +41,7 @@ window.onload = function () {
   createEndImg();
 
   /// Animating the face when player lost ///
-  var unhappyFace = document.getElementsByClassName('mouth');
+  var unhappyFace = document.getElementById('mouth');
 
 
   // create alphabet ul
