@@ -151,8 +151,10 @@ body {
   100% {margin-left: -1000px;}
 }
 
-.flower-wrapper{
+.flower-container{
   position: relative;
+}
+.flower-wrapper{
   width: $w;
   height: $h;
   border-radius: 0%;
@@ -259,7 +261,7 @@ body {
 }
 .ground{
   left: 0;
-  background-color: $grass;
+  background-color: $;
   height: 250px;
   width: 100%;
   bottom: 0;
