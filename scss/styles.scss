@@ -3,6 +3,15 @@
 @import 'partials/colors';
 @import 'partials/flower';
 
+@mixin transformation($tY, $tX, $r, $sk, $sc){
+  transform:
+    translateY($tY)
+    translateX($tX)
+    rotate($r)
+    skewX($sk)
+    scale($sc);
+}
+
 .container{
   background: linear-gradient($sky, $skyBottom);
   background: -webkit-linear-gradient($sky, $skyBottom);
@@ -35,7 +44,7 @@ progress[value]::-webkit-progress-value{
   height: 72px;
 }
 
-.flowerWrapper{
+.flower-wrapper{
   position: relative;
   width: $w;
   height: $h;
@@ -45,9 +54,93 @@ progress[value]::-webkit-progress-value{
 
 .core{
   position: absolute;
+  display: inline-block;
+  justify-content: center;
+  top: ($h - $ch)/2;
+  left: ($w - $cw)/2;
+  width: $cw;
+  height: $ch;
+  background: $core-col;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: opacity 0.25s eas-in-out;
+  opacity: 1;
 }
 
-.groundContainer{
+.petal-wrapper{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $w;
+  height: $h;
+}
+
+.petal{
+  position: absolute;
+  width: $pw + 3em;
+  height: $ph + 2em;
+  background: $petal-col;
+  border-radius: 0 50% 50% 50%;
+  box-shadow: -2px 2px 20px;
+  box-shadow: -2px -2px 20px rgba(255,255,255,0.5) 
+    inset,
+    0px 0px 2px rgba(0,0,0,0.5);
+  box-sizing: border-box;
+  justify-content: center;
+  overflow: hidden;
+  transition: opacity 0.25s ease-in-out;
+  opacity: 1;
+
+  @for $i from 1 through $np {
+    &:nth-child(#{$i}) {
+      animation: ani#{$i} $anim-time ease-in-out infinite;
+      animation-delay: ($i - 1) * $anim-time / $np;
+      @include transformation(
+        ($h - $ph) / 2 + $off * sin(($i - 1) * $angle-incr),
+        ($w - $pw) / 2 + $off * cos(($i - 1) * $angle-incr),
+        -$alpha + ($i - 1) * $angle-incr,
+        $alpha,
+        1
+      );
+    }
+  }
+}
+
+@for $i from 1 through $np {
+  @keyframes ani#{$i} {
+    0% {
+      @include transformation(
+        ($h - $ph) / 2 + $off * sin(($i - 1) * $angle-incr),
+        ($w - $pw) / 2 + $off * cos(($i - 1) * $angle-incr),
+        -$alpha + ($i - 1) * $angle-incr,
+        $alpha,
+        1
+      );
+    }
+
+    50% {
+      @include transformation(
+        ($h - $ph) / 2 + $off-ani * sin(($i - 1) * $angle-incr),
+        ($w - $pw) / 2 + $off-ani * cos(($i - 1) * $angle-incr),
+        -$alpha + ($i - 1) * $angle-incr,
+        $alpha,
+        $sf
+      );
+    }
+
+    100% {
+      @include transformation(
+        ($h - $ph) / 2 + $off * sin(($i - 1) * $angle-incr),
+        ($w - $pw) / 2 + $off * cos(($i - 1) * $angle-incr),
+        -$alpha + ($i - 1) * $angle-incr,
+        $alpha,
+        1
+      );
+    }
+  }
+}
+
+.ground-container{
   bottom: 0;
 }
 .grass{
