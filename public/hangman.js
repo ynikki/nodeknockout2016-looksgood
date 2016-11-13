@@ -147,6 +147,24 @@ window.onload = function () {
       if (j === -1) {
         hp -= 1;
         lifeBar.value--;
+        if(lifeBar.value === 4){
+          $("#petalOne").fadeOut(500);
+        }else if(lifeBar.value === 3){
+          $("#petalTwo").fadeOut(500);
+        }else if(lifeBar.value === 2){
+          $("#petalThree").fadeOut(500);
+          unhappyFace.style.transform = "rotate(180deg)";
+          unhappyFace.style.marginTop = "47px";
+          unhappyFace.style.transitionTimingFunction = "ease";
+        }else if(lifeBar.value === 1){
+          $("#petalFour").fadeOut(500);
+        }else if(lifeBar.value === 0) {
+          $("#petalFive").fadeOut(500);
+          leftEye.style.height = "5px";
+          leftEye.style.marginTop = "32px";
+          rightEye.style.height = "5px";
+          rightEye.style.marginTop = "32px";
+        }
         comments();
       } else {
         comments();
