@@ -27,10 +27,10 @@ html(lang="en")
         p(id="catagoryName" class="word-category")
         div.dropdown
           select(id="categories")
-            option(value="") Select a category
-            option(value="plants") Plants
-            option(value="zombies") Zombies
-            input(type='submit' value='Submit')
+            option(value="" selected="true" disabled="disabled") Select a category
+            option#categories(value="Javascript") Javascript
+            option#categories(value="CSS/HTML") CSS/HTML
+            option#categories(value="Node.js") Node.js
         div(id="letter-buttons" class="alphabet-container")
         button#hint Hint
         button#reset Play Again
