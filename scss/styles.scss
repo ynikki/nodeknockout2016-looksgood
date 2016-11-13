@@ -3,19 +3,11 @@
 @import 'partials/colors';
 @import 'partials/words';
 @import 'partials/flower';
+@import 'partials/mixins';
 
 @font-face {
   font-family: 'Arcade';
   src: url("/font/Arcade.ttf"); }
-
-@mixin transformation($tY, $tX, $r, $sk, $sc){
-  transform:
-    translateY($tY)
-    translateX($tX)
-    rotate($r)
-    skewX($sk)
-    scale($sc);
-}
 
 * {
   box-sizing: border-box;
@@ -197,10 +189,13 @@ progress[value]::-webkit-progress-value{
 }
 .stem{
   background: $grass;
-  width: .5em;
-  height: 20em;
+  width: .9em;
+  height: 18em;
   display: block;
   position: absolute;
+  left: 143px;
+  bottom: 230px;
+  z-index: -1;
 }
 .mouth{
   margin-top: -50px;

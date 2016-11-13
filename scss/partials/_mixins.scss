@@ -1,0 +1,86 @@
+//// Mixin for the flower ////
+@mixin transformation($tY, $tX, $r, $sk, $sc){
+  transform:
+    translateY($tY)
+    translateX($tX)
+    rotate($r)
+    skewX($sk)
+    scale($sc);
+}
+/// Mixin for the leaves ///
+@mixin config($w, $top, $border-color, $border-width, $leaves){
+  height: $w;
+  width: $w;
+  opacity: 0;
+  margin-top: $top;
+  border-radius: $w * 5;
+  border: $border-width solid $border-color;
+  box-shadow: 0 0 0 .2em
+    darken($border-color, 4), 0 0 0 .2em;
+  span{
+    top: $w + $border-width + .2em;
+    left: $w/2.3;
+    @if $leaves == 1 {
+      &:before{
+        display: block;
+      }
+      &:after{
+        display: block;
+      }
+    }
+    @if $leaves == 2 {
+      &:before{
+        display: block;
+      }
+      &:after{
+        display: block;
+      }
+    }
+  }
+}
+
+/* Mixin's */
+@mixin transition {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+@mixin clear {
+  &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+}
+
+ @mixin box-size {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+ @mixin transition {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+@mixin fade {
+  -moz-transition: all 1s ease-in;
+  -moz-transition:all 0.3s ease-in-out;
+  -webkit-transition:all 0.3s ease-in-out;
+}
+
+@mixin opacity {
+  opacity:0.4;
+  filter:alpha(opacity=40);
+  @include fade;
+}
+
+@mixin corners ($radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  -khtml-border-radius: $radius;
+}
