@@ -23,6 +23,16 @@ body {
   text-align: center;
 }
 
+///// vote tag ////
+.nodeknockout-container{
+  position: absolute;
+  right: 0;
+  z-index: 5;
+  img{
+    width: 75px;
+  }
+}
+
 /////////////////////////////////////
 /////     ARTWORK CONTAINER     /////
 /////////////////////////////////////
