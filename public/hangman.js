@@ -17,6 +17,8 @@ window.onload = function () {
   var showCatagory = document.getElementById("categories");
   var getHint = document.getElementById("hint");
   var showClue = document.getElementById("clue");
+  var lifeBar = document.getElementById('health');
+
 
   // // Create Image When Game Ends
   // var container = document.getElementById('end-img');
@@ -147,24 +149,7 @@ window.onload = function () {
       if (j === -1) {
         hp -= 1;
         lifeBar.value--;
-        if(lifeBar.value === 4){
-          $("#petalOne").fadeOut(500);
-        }else if(lifeBar.value === 3){
-          $("#petalTwo").fadeOut(500);
-        }else if(lifeBar.value === 2){
-          $("#petalThree").fadeOut(500);
-          unhappyFace.style.transform = "rotate(180deg)";
-          unhappyFace.style.marginTop = "47px";
-          unhappyFace.style.transitionTimingFunction = "ease";
-        }else if(lifeBar.value === 1){
-          $("#petalFour").fadeOut(500);
-        }else if(lifeBar.value === 0) {
-          $("#petalFive").fadeOut(500);
-          leftEye.style.height = "5px";
-          leftEye.style.marginTop = "32px";
-          rightEye.style.height = "5px";
-          rightEye.style.marginTop = "32px";
-        }
+        flowerPetals();
         comments();
       } else {
         comments();
@@ -194,28 +179,10 @@ window.onload = function () {
         }
       }
       var j = (word.indexOf(geuss));
-      var lifeBar = document.getElementById('health');
       if (j === -1) {
         hp -= 1;
         lifeBar.value--;
-        if(lifeBar.value === 4){
-          $("#petalOne").fadeOut(500);
-        }else if(lifeBar.value === 3){
-          $("#petalTwo").fadeOut(500);
-        }else if(lifeBar.value === 2){
-          $("#petalThree").fadeOut(500);
-          unhappyFace.style.transform = "rotate(180deg)";
-          unhappyFace.style.marginTop = "47px";
-          unhappyFace.style.transitionTimingFunction = "ease";
-        }else if(lifeBar.value === 1){
-          $("#petalFour").fadeOut(500);
-        }else if(lifeBar.value === 0) {
-          $("#petalFive").fadeOut(500);
-          leftEye.style.height = "5px";
-          leftEye.style.marginTop = "32px";
-          rightEye.style.height = "5px";
-          rightEye.style.marginTop = "32px";
-        }
+        flowerPetals();
         comments();
       } else {
         comments();
@@ -223,6 +190,26 @@ window.onload = function () {
     }
   }
 
+  function flowerPetals(){
+    if(lifeBar.value === 4){
+      $("#petalOne").fadeOut(500);
+    }else if(lifeBar.value === 3){
+      $("#petalTwo").fadeOut(500);
+    }else if(lifeBar.value === 2){
+      $("#petalThree").fadeOut(500);
+      unhappyFace.style.transform = "rotate(180deg)";
+      unhappyFace.style.marginTop = "47px";
+      unhappyFace.style.transitionTimingFunction = "ease";
+    }else if(lifeBar.value === 1){
+      $("#petalFour").fadeOut(500);
+    }else if(lifeBar.value === 0) {
+      $("#petalFive").fadeOut(500);
+      leftEye.style.height = "5px";
+      leftEye.style.marginTop = "32px";
+      rightEye.style.height = "5px";
+      rightEye.style.marginTop = "32px";
+    }
+  }
 
   // Play
   play = function () {
@@ -289,12 +276,31 @@ window.onload = function () {
     var x = document.getElementById('end-game-image');
     var lifeBar = document.getElementById('health');
     lifeBar.value='5';
-    x.parentNode.removeChild(x);
+    // x.parentNode.removeChild(x);
     correct.parentNode.removeChild(correct);
     letters.parentNode.removeChild(letters);
     showClue.innerHTML = "";
+    var cloud = document.getElementById('cloud');
+      cloud.className = 'cloud-background';
+    var petal1 = document.getElementById('petalOne');
+      petal1.removeAttribute('style');
+    var petal2 = document.getElementById('petalTwo');
+      petal2.removeAttribute('style');
+    var petal3 = document.getElementById('petalThree');
+      petal3.removeAttribute('style');
+    var petal4 = document.getElementById('petalFour');
+        petal4.removeAttribute('style');
+    var petal5 = document.getElementById('petalFive');
+      petal5.removeAttribute('style');
+    var smile = document.getElementById('mouth');
+      smile.removeAttribute('style');
+    var eyeL = document.getElementById('leftEye');
+      eyeL.removeAttribute('style');
+    var eyeR = document.getElementById('rightEye');
+      eyeR.removeAttribute('style');
     play();
-    createEndImg();
+    flowerPetals();
+    // createEndImg();
   };
 };
 
