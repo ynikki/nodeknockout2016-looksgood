@@ -39,11 +39,8 @@ progress[value]::-webkit-progress-value{
   background-size: 35px 20px, 100% 100%, 100% 100%;
 }
 
-
-// div{border: 1px solid red;}
-
 body {
-  overflow: hidden;
+  background-color: $white;
 }
 
 // CLOUDS CONTAINER //
@@ -54,6 +51,7 @@ body {
   background: -o-linear-gradient($light-sky 0%, $white 100%);
   background: linear-gradient($light-sky 0%, $white 100%);
   padding: 25px 0 10px;
+  overflow-x: hidden;
 }
 // CREATE STATIC CLOUDS //
 .cloud{

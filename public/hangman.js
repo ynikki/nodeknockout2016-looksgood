@@ -73,12 +73,12 @@ window.onload = function () {
    comments = function () {
     showLives.innerHTML = "You have " + lives + " lives";
     if (lives < 1) {
-      showLives.innerHTML = "Game Over";
+      showLives.innerHTML = "I withered away :'(";
       endGame();
     }
     for (var i = 0; i < geusses.length; i++) {
       if (counter + space === geusses.length) {
-        showLives.innerHTML = "You Win!";
+        showLives.innerHTML = "I'm ALIVE!";
         var win = "win";
         endGame(win);
       }
@@ -98,8 +98,10 @@ window.onload = function () {
         }
       }
       var j = (word.indexOf(geuss));
+      var lifeBar = document.getElementById('health');
       if (j === -1) {
         lives -= 1;
+        lifeBar.value--;
         comments();
       } else {
         comments();
