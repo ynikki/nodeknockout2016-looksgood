@@ -16,7 +16,7 @@
   box-sizing: border-box;
 }
 body {
-  background: $green;
+  // background: $green;
   font-family: 'Arcade';
   color: $white;
   text-align: center;
@@ -35,6 +35,16 @@ p{
   background: -moz-linear-gradient($light-sky 0%, $white 100%);
   background: -o-linear-gradient($light-sky 0%, $white 100%);
   background: linear-gradient($light-sky 0%, $white 100%);
+  padding: 25px 0 10px;
+  overflow-x: hidden;
+}
+
+.sad-background{
+  background: $light-sky;
+  background: -webkit-linear-gradient($gray-sky 0%, $white 100%);
+  background: -moz-linear-gradient($gray-sky 0%, $white 100%);
+  background: -o-linear-gradient($gray-sky 0%, $white 100%);
+  background: linear-gradient($gray-sky 0%, $white 100%);
   padding: 25px 0 10px;
   overflow-x: hidden;
 }
@@ -136,22 +146,15 @@ p{
 }
 
 // ***Grass Artwork*** //
-.ground-container{
-  bottom: 0;
+.grass-container{
+  background-color: $white;
 }
 .grass{
   background-image: url('/images/grass.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 200px;
-}
-.ground{
-  left: 0;
-  background-color: $grass;
-  height: 250px;
-  width: 100%;
-  bottom: 0;
+  height: 100px;
 }
 .ground-container{
   bottom: 0;
@@ -309,25 +312,31 @@ p{
 /////////////////////////////////////
 /////      GAME  CONTAINER      /////
 /////////////////////////////////////
+.game-container{
+  background-color: $grass;
+}
 // ***Progress Bar*** //
-progress{
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  border-radius: 2px;
-  width: 250px;
-  height: 20px;
-}
-progress[value]::-webkit-progress-bar{
-  background-color: #eee;
-  border-radius: 2px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
-}
-progress[value]::-webkit-progress-value{
-  background-color: $progressBar;
-  border-radius: 2px;
-  background-size: 35px 20px, 100% 100%, 100% 100%;
+.progress-container{
+
+  progress{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    border-radius: 2px;
+    width: 250px;
+    height: 20px;
+  }
+  progress[value]::-webkit-progress-bar{
+    background-color: #eee;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+  }
+  progress[value]::-webkit-progress-value{
+    background-color: $progressBar;
+    border-radius: 2px;
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+  }
 }
 
 .wrappper{
