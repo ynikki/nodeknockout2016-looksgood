@@ -160,11 +160,11 @@ window.onload = function () {
     var unhappyFace = document.getElementById('mouth');
     var leftEye = document.getElementById('leftEye');
     var rightEye = document.getElementById('rightEye');
-    var firstPetal = document.getElementById('petalOne');
-    var secondPetal = document.getElementById('petalTwo');
-    var thirdPetal = document.getElementById('petalThree');
-    var fourthPetal = document.getElementById('petalFour');
-    var fifthPetal = document.getElementById('petalFive');
+    // var firstPetal = document.getElementById('petalOne');
+    // var secondPetal = document.getElementById('petalTwo');
+    // var thirdPetal = document.getElementById('petalThree');
+    // var fourthPetal = document.getElementById('petalFour');
+    // var fifthPetal = document.getElementById('petalFive');
     list.onclick = function () {
       var geuss = (this.innerHTML);
       this.setAttribute("class", "active");
