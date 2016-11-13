@@ -459,6 +459,9 @@ button {
   font-size: 1rem;
   color: gray; }
 
-.footer p {
-  color: #000000;
-  font-size: 0.6rem; }
+.footer {
+  padding: 10px 0;
+  background-color: #76a03f; }
+  .footer p {
+    color: #000000;
+    font-size: 0.6rem; }

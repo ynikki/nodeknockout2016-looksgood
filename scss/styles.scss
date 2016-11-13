@@ -424,6 +424,8 @@ button{
 }
 
 .footer{
+  padding: 10px 0;
+  background-color: darken($green, 25%);
   p{
     color: $black;
     font-size: 0.6rem;
