@@ -224,6 +224,40 @@ body {
   position: absolute;
   left: 130px;
   bottom: -95px;
+  &:after {
+    content: '';
+    transform: rotate(7deg);
+    -ms-transform: rotate(7deg);
+    -webkit-transform: rotate(7deg);
+    -moz-transform-origin: left;
+    -webkit-transform-origin: left; 
+    width: 3em;
+    height: 3em;
+    display: block;
+    background: darken($leaf, 5);
+    border-radius: 2em 0em 2em 0em;
+    box-shadow: 0 0 0 .2em darken($leaf, 8) inset;
+    top: 1em;
+    left: 1.06em;
+    position: absolute;
+  }
+  &:before {
+    transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    -webkit-transform: rotate(-10deg);
+    -moz-transform-origin: right;
+    -webkit-transform-origin: right; 
+    content: '';
+    width: 3em;
+    height: 3em;
+    display: block;
+    background: darken($leaf, 7);
+    border-radius: 0em 2em 0em 2em;
+    box-shadow: 0 0 0 .2em darken($leaf, 8) inset;
+    position: absolute;
+    left: -3.2em;
+    top: 2.2em;
+  }
 }
 .petal-wrapper{
   position: absolute;
