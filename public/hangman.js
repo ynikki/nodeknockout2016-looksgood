@@ -34,10 +34,6 @@ window.onload = function () {
   }
   createEndImg();
 
-  /// Animating the face when player lost ///
-  var unhappyFace = document.getElementById('mouth');
-
-
   // create alphabet ul
   var buttons = function () {
     myButtons = document.getElementById('letter-buttons');
@@ -127,6 +123,10 @@ window.onload = function () {
 
   // OnClick Function
   check = function () {
+    // var lifeBar = document.getElementById('health');
+    var unhappyFace = document.getElementById('mouth');
+    var eyes = document.getElementsByClassName('eye');
+    var petal = document.getElementsByClassName('petal');
     list.onclick = function () {
       var geuss = (this.innerHTML);
       this.setAttribute("class", "active");
@@ -142,6 +142,15 @@ window.onload = function () {
       if (j === -1) {
         hp -= 1;
         lifeBar.value--;
+        if(lifeBar.value === 2){
+          unhappyFace.style.transform = "rotate(180deg)";
+          unhappyFace.style.marginTop = "51px";
+          unhappyFace.style.transitionTimingFunction = "ease";
+        } else if(lifeBar.value === 1) {
+          eyes.style.transform = "translateY(20px)";
+          eyes.style.transform = "translateX(5px)";
+          eyes.style.transform = "rotate(27deg)";
+        }
         comments();
       } else {
         comments();
@@ -190,6 +199,10 @@ window.onload = function () {
     selectCat();
   };
   play();
+
+  function testing() {
+    console.log('hi');
+  }
 
   // Hint
   hint.onclick = function() {
