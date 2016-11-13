@@ -189,6 +189,16 @@ p{
   opacity: 1;
   margin: 15px 0 0 20px;
 }
+.smiley
+{
+  background-color: #ffff80;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 200px;
+  border-radius: 200px;
+  margin: auto;
+  position: absolute;
+  top:0; bottom:0; left:0; right:0;
+}
 .eye{
   background-color: $eye;
   width: 15px;
@@ -199,11 +209,12 @@ p{
   margin-top: 28px;
 }
 #leftEye{
-  margin-left: 15px;
+  margin-left: 12px;
 }
 #rightEye{
-  margin-left: 60px;
+  margin-left: 55px;
 }
+
 .stem{
   background: $grass;
   width: .9em;
@@ -215,11 +226,11 @@ p{
   z-index: -1;
 }
 .mouth{
-  margin-top: -50px;
+  margin-top: -55px;
   width: 80px;
   height: 125px;
   border: solid 4px $eye;
-  margin-left: 5px;
+  margin-left: 1px;
   border-color: transparent transparent $eye transparent;
   border-radius: 100px 100px 100px 100px;
 }
