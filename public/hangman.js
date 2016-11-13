@@ -40,6 +40,8 @@ window.onload = function () {
   }
   createEndImg();
 
+  /// Animating the face when player lost ///
+  var unhappyFace = document.getElementsByClassName('mouth');
 
 
   // create alphabet ul
