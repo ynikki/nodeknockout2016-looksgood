@@ -7,9 +7,9 @@ window.onload = function () {
   var getHint ;          // Word getHint
   var word ;              // Selected word
   var guess ;             // Geuss
-  var geusses = [ ];      // Stored geusses
+  var tries = [ ];      // Stored tries
   var hp ;             // hp
-  var counter ;           // Count correct geusses
+  var counter ;           // Count correct tries
   var space;              // Number of spaces in word '-'
 
   // Get elements
@@ -63,8 +63,8 @@ window.onload = function () {
     }
   }
 
-  // Create geusses ul
-   result = function () {
+  // Create tries ul
+  result = function () {
     wordHolder = document.getElementById('word-holder');
     correct = document.createElement('ul');
 
@@ -79,21 +79,21 @@ window.onload = function () {
         guess.innerHTML = "_";
       }
 
-      geusses.push(guess);
+      tries.push(guess);
       wordHolder.appendChild(correct);
       correct.appendChild(guess);
     }
   }
 
   // Show hp
-   comments = function () {
+  comments = function () {
     showhp.innerHTML = "You have " + hp + " HP";
     if (hp < 1) {
       showhp.innerHTML = "I withered away :'(";
       endGame();
     }
-    for (var i = 0; i < geusses.length; i++) {
-      if (counter + space === geusses.length) {
+    for (var i = 0; i < tries.length; i++) {
+      if (counter + space === tries.length) {
         showhp.innerHTML = "I'm ALIVE!";
         var win = "win";
         endGame(win);
@@ -102,14 +102,14 @@ window.onload = function () {
   }
 
   // OnClick Function
-   check = function () {
+  check = function () {
     list.onclick = function () {
       var geuss = (this.innerHTML);
       this.setAttribute("class", "active");
       this.onclick = null;
       for (var i = 0; i < word.length; i++) {
         if (word[i] === geuss) {
-          geusses[i].innerHTML = geuss;
+          tries[i].innerHTML = geuss;
           counter += 1;
         }
       }
@@ -140,35 +140,31 @@ window.onload = function () {
     console.log(word);
     buttons();
 
-    geusses = [ ];
+    tries = [ ];
     hp = 5;
     counter = 0;
     space = 0;
     result();
     comments();
     selectCat();
-  }
-
+  };
   play();
 
   // Hint
-
-    hint.onclick = function() {
-
-      hints = [
-        ["Based in Mersyside", "Based in Mersyside", "First Welsh team to reach the Premier Leauge", "Owned by A russian Billionaire", "Once managed by Phil Brown", "2013 FA Cup runners up", "Gazza's first club"],
-        ["Science-Fiction horror film", "1971 American action film", "Historical drama", "Anamated Fish", "Giant great white shark"],
-        ["Northern city in the UK", "Home of AC and Inter", "Spanish capital", "Netherlands capital", "Czech Republic capital"]
+  hint.onclick = function() {
+    hints = [
+      ["Based in Mersyside", "Based in Mersyside", "First Welsh team to reach the Premier Leauge", "Owned by A russian Billionaire", "Once managed by Phil Brown", "2013 FA Cup runners up", "Gazza's first club"],
+      ["Science-Fiction horror film", "1971 American action film", "Historical drama", "Anamated Fish", "Giant great white shark"],
+      ["Northern city in the UK", "Home of AC and Inter", "Spanish capital", "Netherlands capital", "Czech Republic capital"]
     ];
 
     var catagoryIndex = categories.indexOf(chosenCategory);
     var hintIndex = chosenCategory.indexOf(word);
-    showClue.innerHTML = "Clue: - " +  hints [catagoryIndex][hintIndex];
+    showClue.innerHTML = "*Hint: " +  hints [catagoryIndex][hintIndex] + '*';
   };
 
    // Reset
-
-  document.getElementById('reset').onclick = function() {
+  document.getElementById('reset').onclick = function(){
     var x = document.getElementById('end-game-image');
     var lifeBar = document.getElementById('health');
     lifeBar.value='5';
@@ -178,8 +174,8 @@ window.onload = function () {
     showClue.innerHTML = "";
     play();
     createEndImg();
-  }
-}
+  };
+};
 
 function endGame(win) {
     winImg = 'http://plusquotes.com/images/quotes-img/flower-25.jpg';
