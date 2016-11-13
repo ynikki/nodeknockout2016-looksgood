@@ -84,7 +84,6 @@ window.onload = function () {
 
   document.getElementById("categories").onchange = function() {
     var catValue = document.getElementById("categories").value;
-    // console.log(catValue);
     correct.parentNode.removeChild(correct);
     letters1.parentNode.removeChild(letters1);
     letters2.parentNode.removeChild(letters2);
@@ -208,7 +207,6 @@ window.onload = function () {
 
     word = chosenCategory[Math.floor(Math.random() * chosenCategory.length)];
     word = word.replace(/\s/g, "-");
-    console.log(word);
     buttons();
 
     tries = [ ];
