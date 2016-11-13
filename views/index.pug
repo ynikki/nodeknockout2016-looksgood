@@ -6,6 +6,7 @@ html(lang="en")
     link(href='/css/styles.css', rel='stylesheet')
     script(src="https://code.jquery.com/jquery-2.2.4.min.js")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/jquerykeyframes/0.0.9/jquery.keyframes.min.js")
+    script(src="/js/animate.js")
   body
     div.container
       div.artwork-container
@@ -14,24 +15,19 @@ html(lang="en")
           div(class="cloud move-2")
           div(class="cloud move-3")
           div(class="cloud move-4")
-        div.ground-container
+        div.grass-container
           div.grass
-          div.ground
       div.game-container
-        progress(id="health" value="5" max="5")
-        ul(id="letters")
-        p(id="man")
-        p(id="output" class="output")
-        div#result
+        div.progress-container
+          progress(id="health" value="5" max="5")
+          p(id="myhp" class="hp-value")
+        div(id="word-holder" class="word-container")
         div#end-img
-        div#output
-        p#catagoryName
-        div#health
-        div#alphabets
-        p#myhp
+        p(id="catagoryName" class="word-category")
         div.dropdown
           select(id="categories")
             option(value="") Select a category
+<<<<<<< HEAD
             option#categories(value="Javascript") Javascript
             option#categories(value="CSS/HTML") CSS/HTML
             option#categories(value="Node.js") Node.js
@@ -40,7 +36,15 @@ html(lang="en")
       div.wrapper
         div#buttons
         div#hold
+=======
+            option(value="plants") Plants
+            option(value="zombies") Zombies
+            input(type='submit' value='Submit')
+        div(id="letter-buttons" class="alphabet-container")
+>>>>>>> master
         button#hint Hint
+        button#reset Play again
+        p#clue
       div.flower-container
         div.flower-wrapper
           div.petal-wrapper
@@ -50,8 +54,9 @@ html(lang="en")
             div.petal
             div.petal
           div.core
-            div(id="leftEye" class="eye")
-            div(id="rightEye" class="eye")
-            div.mouth
+            div.smiley
+              div(id="leftEye" class="eye")
+              div(id="rightEye" class="eye")
+              div.mouth
           span(class="stem")
     script(src='/hangman.js')
