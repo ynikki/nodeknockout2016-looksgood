@@ -191,6 +191,13 @@ body {
 #rightEye{
   margin-left: 60px;
 }
+.stem{
+  background: $grass;
+  width: .5em;
+  height: 20em;
+  display: block;
+  position: absolute;
+}
 .mouth{
   margin-top: -50px;
   width: 80px;
