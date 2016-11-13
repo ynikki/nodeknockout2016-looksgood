@@ -204,21 +204,22 @@ p{
 }
 .eye{
   background-color: $eye;
-  width: 15px;
+  width: 12px;
   height: 20px;
+  border-radius: 150px;
   -webkit-border-radius: 100px;
   -moz-border-radius: 150px;
   position: absolute;
-  margin-top: 28px;
+  margin-top: 25px;
 }
 #leftEye{
-  margin-left: 12px;
+  margin-left: 15px;
 }
 #rightEye{
   margin-left: 55px;
 }
 .mouth{
-  margin-top: -52px;
+  margin-top: -57px;
   width: 80px;
   height: 125px;
   border: solid 4px $eye;
