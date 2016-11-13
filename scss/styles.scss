@@ -203,14 +203,14 @@ body {
 #rightEye{
   margin-left: 55px;
 }
-.mouth{
+#mouth{
   margin-top: -57px;
-  width: 80px;
-  height: 125px;
   border: solid 4px $eye;
   margin-left: 1px;
   border-color: transparent transparent $eye transparent;
   border-radius: 100px 100px 100px 100px;
+  width: 80px;
+  height: 125px;
 }
 
 .stem{
@@ -390,7 +390,6 @@ body {
 }
 
 button{
-  @include corners (5px);
   background:$green;
   color:$white;
   border: solid 1px $white;

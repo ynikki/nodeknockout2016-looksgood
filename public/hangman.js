@@ -1,12 +1,6 @@
 window.onload = function () {
 
-  // var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-
-  // var alphabet = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm'];
-
-  var keyRow1 = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'];
-  var keyRow2 = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'];
-  var keyRow3 = ['z', 'x', 'c', 'v', 'b', 'n', 'm'];
+  var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
   var categories;         // Array of topics
   var chosenCategory;     // Selected catagory
@@ -40,53 +34,31 @@ window.onload = function () {
   }
   createEndImg();
 
+  /// Animating the face when player lost ///
+  var unhappyFace = document.getElementById('mouth');
 
 
   // create alphabet ul
   var buttons = function () {
     myButtons = document.getElementById('letter-buttons');
-    letters1 = document.createElement('ul');
-    letters2 = document.createElement('ul');
-    letters3 = document.createElement('ul');
+    letters = document.createElement('ul');
 
-    for (var i = 0; i < keyRow1.length; i++) {
-      letters1.className = 'letter-keys';
+    for (var i = 0; i < alphabet.length; i++) {
+      letters.className = 'letter-keys';
       list = document.createElement('li');
       list.id = 'letter';
-      list.innerHTML = keyRow1[i];
+      list.innerHTML = alphabet[i];
       check();
-      myButtons.appendChild(letters1);
-      letters1.appendChild(list);
+      myButtons.appendChild(letters);
+      letters.appendChild(list);
     }
-    for (var j = 0; j < keyRow2.length; j++) {
-      letters2.className = 'letter-keys';
-      list = document.createElement('li');
-      list.id = 'letter';
-      list.innerHTML = keyRow2[j];
-      check();
-      myButtons.appendChild(letters2);
-      letters2.appendChild(list);
-    }
-    for (var k = 0; k < keyRow3.length; k++) {
-      letters3.className = 'letter-keys';
-      list = document.createElement('li');
-      list.id = 'letter';
-      list.innerHTML = keyRow3[k];
-      check();
-      myButtons.appendChild(letters3);
-      letters3.appendChild(list);
-    }
-
   }
 
 
   document.getElementById("categories").onchange = function() {
     var catValue = document.getElementById("categories").value;
-    // console.log(catValue);
     correct.parentNode.removeChild(correct);
-    letters1.parentNode.removeChild(letters1);
-    letters2.parentNode.removeChild(letters2);
-    letters3.parentNode.removeChild(letters3);
+    letters.parentNode.removeChild(letters);
     showClue.innerHTML = "";
 
     play();
@@ -206,7 +178,6 @@ window.onload = function () {
 
     word = chosenCategory[Math.floor(Math.random() * chosenCategory.length)];
     word = word.replace(/\s/g, "-");
-    console.log(word);
     buttons();
 
     tries = [ ];
@@ -240,9 +211,7 @@ window.onload = function () {
     lifeBar.value='5';
     x.parentNode.removeChild(x);
     correct.parentNode.removeChild(correct);
-    letters1.parentNode.removeChild(letters1);
-    letters2.parentNode.removeChild(letters2);
-    letters3.parentNode.removeChild(letters3);
+    letters.parentNode.removeChild(letters);
     showClue.innerHTML = "";
     play();
     createEndImg();
