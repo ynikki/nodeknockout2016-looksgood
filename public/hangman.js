@@ -20,7 +20,7 @@ window.onload = function () {
 
   // create alphabet ul
   var buttons = function () {
-    myButtons = document.getElementById('buttons');
+    myButtons = document.getElementById('letter-buttons');
     letters = document.createElement('ul');
 
     for (var i = 0; i < alphabet.length; i++) {
@@ -47,7 +47,7 @@ window.onload = function () {
 
   // Create geusses ul
    result = function () {
-    wordHolder = document.getElementById('hold');
+    wordHolder = document.getElementById('word-holder');
     correct = document.createElement('ul');
 
     for (var i = 0; i < word.length; i++) {
