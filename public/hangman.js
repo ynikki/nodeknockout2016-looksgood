@@ -256,5 +256,7 @@ function endGame(win) {
       endImage.src = winImg;
     } else {
       endImage.src = loseImg;
+      var cloud = document.getElementById('cloud');
+      cloud.className = 'sad-background';
     }
 }
