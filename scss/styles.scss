@@ -400,7 +400,6 @@ p{
 }
 
 button{
-  @include corners (5px);
   background:$green;
   color:$white;
   border: solid 1px $white;
