@@ -264,6 +264,38 @@ body {
   position: absolute;
   left: 130px;
   bottom: -95px; }
+  .stem:after {
+    content: '';
+    transform: rotate(7deg);
+    -ms-transform: rotate(7deg);
+    -webkit-transform: rotate(7deg);
+    -moz-transform-origin: left;
+    -webkit-transform-origin: left;
+    width: 3em;
+    height: 3em;
+    display: block;
+    background: #a8cb7a;
+    border-radius: 2em 0em 2em 0em;
+    box-shadow: 0 0 0 0.2em #a1c76f inset;
+    top: 1em;
+    left: 1.06em;
+    position: absolute; }
+  .stem:before {
+    transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    -webkit-transform: rotate(-10deg);
+    -moz-transform-origin: right;
+    -webkit-transform-origin: right;
+    content: '';
+    width: 3em;
+    height: 3em;
+    display: block;
+    background: #a3c872;
+    border-radius: 0em 2em 0em 2em;
+    box-shadow: 0 0 0 0.2em #a1c76f inset;
+    position: absolute;
+    left: -3.2em;
+    top: 2.2em; }
 
 .petal-wrapper {
   position: absolute;
@@ -414,12 +446,12 @@ body {
     padding-top: 8px;
     font-size: 26px;
     background: #FFFFFF;
-    color: #b4d28c;
+    color: #c1d72e;
     cursor: pointer;
     border: solid 1px #FFFFFF;
     border-radius: 4px; }
     .alphabet-container .letter-keys li:hover {
-      background: #b4d28c;
+      background: #c1d72e;
       border: solid 1px #FFFFFF;
       color: #FFFFFF; }
   .alphabet-container .active {
@@ -440,7 +472,7 @@ body {
       -webkit-transition: all 0.3s ease-in-out; }
 
 button {
-  background: #b4d28c;
+  background: #c1d72e;
   color: #FFFFFF;
   border: solid 1px #FFFFFF;
   border-radius: 5px;
@@ -456,7 +488,7 @@ button {
     transition: all 0.3s ease-in-out;
     background: #FFFFFF;
     border: solid 1px #FFFFFF;
-    color: #b4d28c; }
+    color: #c1d72e; }
 
 .word-clue {
   font-size: 1.5rem;
