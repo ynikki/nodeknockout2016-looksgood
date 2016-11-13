@@ -277,11 +277,26 @@ window.onload = function () {
     play();
     flowerPetals();
   };
-};
 
-function endGame(win) {
+  function endGame(win) {
     if (!win) {
       var cloud = document.getElementById('cloud');
       cloud.className = 'sad-background';
     }
-}
+    window.onkeypress = function(){
+      return;
+    }
+    var allKeys = document.getElementsByClassName("letter-keys");
+    for (var i = 0; i < allKeys[0].children.length; i++) {
+      var settingAttributeHTML = allKeys[0].children[i].innerHTML;
+      var settingAttribute = allKeys[0].children[i];
+      settingAttribute.setAttribute("class", "active");
+    }
+    for (var i = 0; i < word.length; i++) {
+      if (word[i] === word[i]) {
+        tries[i].innerHTML = word[i];
+      }
+    }
+  }
+};
+
