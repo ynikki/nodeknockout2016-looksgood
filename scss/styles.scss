@@ -5,9 +5,10 @@
 @import 'partials/flower';
 @import 'partials/mixins';
 
-@font-face {
-  font-family: 'Arcade';
-  src: url("/font/Arcade.ttf"); }
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+// @font-face {
+//   font-family: 'Arcade';
+//   src: url("/font/Arcade.ttf"); }
 
 /////////////////////////////////////
 /////      OVERALL STYLING      /////
@@ -16,7 +17,8 @@
   box-sizing: border-box;
 }
 body {
-  font-family: 'Arcade';
+  // font-family: 'Arcade';
+  font-family: 'Press Start 2P', cursive;
   color: $white;
   text-align: center;
 }
@@ -149,12 +151,15 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100px;
+  height: 125px;
 }
 
 // ***Flower Artwork*** //
 .flower-container{
   position: relative;
+  top: -175px;
+  margin-bottom: -175px;
+  margin-left: calc(50% - 120px);
 }
 .flower-wrapper{
   width: $w;
@@ -228,7 +233,7 @@ body {
     -ms-transform: rotate(7deg);
     -webkit-transform: rotate(7deg);
     -moz-transform-origin: left;
-    -webkit-transform-origin: left; 
+    -webkit-transform-origin: left;
     width: 3em;
     height: 3em;
     display: block;
@@ -244,7 +249,7 @@ body {
     -ms-transform: rotate(-10deg);
     -webkit-transform: rotate(-10deg);
     -moz-transform-origin: right;
-    -webkit-transform-origin: right; 
+    -webkit-transform-origin: right;
     content: '';
     width: 3em;
     height: 3em;
@@ -364,15 +369,15 @@ body {
   }
   .hp-value{
     padding: 5px 0;
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: #ff9c08;
   }
 }
 
 // ***The Word To Guess*** //
 .word-container{
-  padding: 5px 0;
-  font-size: 2rem;
+  padding: 10px 0;
+  font-size: 1.7rem;
   #my-word {
     margin: 0;
     padding: 0;
@@ -388,7 +393,7 @@ body {
   }
 }
 .word-category{
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: lighten($black, 50%);
 }
 
@@ -406,7 +411,7 @@ body {
     margin: 5px;
     height:35px;
     padding-top:8px;
-    font-size:26px;
+    font-size:20px;
     background:$white;
     color:$green;
     cursor:pointer;
@@ -435,8 +440,9 @@ button{
   border-radius: 5px;
   text-decoration:none;
   cursor:pointer;
-  font-family: 'Arcade';
-  font-size: 1.5rem;
+  // font-family: 'Arcade';
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.75rem;
   padding: 14px 10px 10px;
   width:180px;
   margin: 10px;
@@ -450,13 +456,15 @@ button{
 }
 
 .word-clue{
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: lighten($black, 50%);
 }
 
 .footer{
+  padding: 10px 0;
+  background-color: darken($green, 25%);
   p{
     color: $black;
-    font-size: 1rem;
+    font-size: 0.6rem;
   }
 }
