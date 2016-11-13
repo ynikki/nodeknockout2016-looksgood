@@ -22,7 +22,7 @@ window.onload = function () {
   var container = document.getElementById('end-img');
   var endImageDiv = document.createElement('div');
   endImageDiv.id = 'end-img-div';
-
+  
   function createEndImg(){
     endImage = document.createElement('img');
     endImage.id = 'end-game-image';

@@ -220,12 +220,12 @@ p{
 }
 .mouth{
   margin-top: -57px;
-  width: 80px;
-  height: 125px;
   border: solid 4px $eye;
   margin-left: 1px;
   border-color: transparent transparent $eye transparent;
   border-radius: 100px 100px 100px 100px;
+  width: 80px;
+  height: 125px;
 }
 
 .stem{
@@ -337,6 +337,13 @@ p{
     background-color: $progressBar;
     border-radius: 2px;
     background-size: 35px 20px, 100% 100%, 100% 100%;
+  }
+  progress[value]::-webkit-progress-value{
+    .mouth:after{
+      border-radius: 100px 100px 100px 100px;
+      width: 80px;
+      height: 125px;
+    }
   }
 }
 
