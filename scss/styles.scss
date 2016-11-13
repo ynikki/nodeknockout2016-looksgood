@@ -9,40 +9,26 @@
   font-family: 'Arcade';
   src: url("/font/Arcade.ttf"); }
 
+/////////////////////////////////////
+/////      OVERALL STYLING      /////
+/////////////////////////////////////
 * {
   box-sizing: border-box;
 }
-
 body {
-  background:$green;
+  background: $green;
   font-family: 'Arcade';
-  color:$white;
-  height:100%;
-  text-align:center;
-  font-size:18px;
+  color: $white;
+  text-align: center;
+}
+p{
+  font-size: 1.6em;
 }
 
-progress{
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  border-radius: 2px;
-  width: 250px;
-  height: 20px;
-}
-progress[value]::-webkit-progress-bar{
-  background-color: #eee;
-  border-radius: 2px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
-}
-progress[value]::-webkit-progress-value{
-  background-color: $progressBar;
-  border-radius: 2px;
-  background-size: 35px 20px, 100% 100%, 100% 100%;
-}
-
-// CLOUDS CONTAINER //
+/////////////////////////////////////
+/////     ARTWORK CONTAINER     /////
+/////////////////////////////////////
+// ***Clouds Container*** //
 .cloud-background{
   background: $light-sky;
   background: -webkit-linear-gradient($light-sky 0%, $white 100%);
@@ -52,7 +38,8 @@ progress[value]::-webkit-progress-value{
   padding: 25px 0 10px;
   overflow-x: hidden;
 }
-// CREATE STATIC CLOUDS //
+
+// ***Create Static Clouds*** //
 .cloud{
   width: 200px;
   height: 60px;
@@ -85,7 +72,8 @@ progress[value]::-webkit-progress-value{
   left: auto;
   right: 15px;
 }
-// CLOUD ANIMATION //
+
+// ***Cloud Animations*** //
 .move-1{
   left: 400px;
   top: 50px;
@@ -147,6 +135,26 @@ progress[value]::-webkit-progress-value{
   100% {margin-left: -1000px;}
 }
 
+// ***Grass Artwork*** //
+.ground-container{
+  bottom: 0;
+}
+.grass{
+  background-image: url('/images/grass.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 200px;
+}
+.ground{
+  left: 0;
+  background-color: $grass;
+  height: 250px;
+  width: 100%;
+  bottom: 0;
+}
+
+// ***Flower Artwork*** //
 .flower-container{
   position: relative;
 }
@@ -156,7 +164,6 @@ progress[value]::-webkit-progress-value{
   border-radius: 0%;
   margin: 0 auto;
 }
-
 .core{
   position: absolute;
   display: inline-block;
@@ -171,7 +178,6 @@ progress[value]::-webkit-progress-value{
   transition: opacity 0.25s eas-in-out;
   opacity: 1;
 }
-
 .eye{
   background-color: $eye;
   width: 15px;
@@ -213,7 +219,6 @@ progress[value]::-webkit-progress-value{
   width: $w;
   height: $h;
 }
-
 .petal{
   position: absolute;
   width: $pw + 3em;
@@ -279,68 +284,28 @@ progress[value]::-webkit-progress-value{
   }
 }
 
-.ground-container{
-  bottom: 0;
+/////////////////////////////////////
+/////      GAME  CONTAINER      /////
+/////////////////////////////////////
+// ***Progress Bar*** //
+progress{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 2px;
+  width: 250px;
+  height: 20px;
 }
-.grass{
-  background-image: url('/images/grass.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 200px;
+progress[value]::-webkit-progress-bar{
+  background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
 }
-.ground{
-  left: 0;
-  background-color: $grass;
-  height: 250px;
-  width: 100%;
-  bottom: 0;
-}
-
-/* Mixin's */
-@mixin transition {
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-}
-
-@mixin clear {
-  &:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-}
-
- @mixin box-size {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
- @mixin transition {
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-
-@mixin fade {
-  -moz-transition: all 1s ease-in;
-  -moz-transition:all 0.3s ease-in-out;
-  -webkit-transition:all 0.3s ease-in-out;
-}
-
-@mixin opacity {
-  opacity:0.4;
-  filter:alpha(opacity=40);
-  @include fade;
-}
-
-@mixin corners ($radius) {
-  -moz-border-radius: $radius;
-  -webkit-border-radius: $radius;
-  border-radius: $radius;
-  -khtml-border-radius: $radius;
+progress[value]::-webkit-progress-value{
+  background-color: $progressBar;
+  border-radius: 2px;
+  background-size: 35px 20px, 100% 100%, 100% 100%;
 }
 
 .wrappper{
@@ -349,32 +314,7 @@ progress[value]::-webkit-progress-value{
   margin:0 auto;
 }
 
-
-canvas{
-  color:$white;
-  border: $white dashed 2px;
-  padding:15px;
-}
-
-h1, h2, h3 {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 100;
-  text-transform: uppercase;
-   margin:5px 0;
-}
-
-h1 {
-  font-size: 2.6em;
-}
-
-h2 {
-  font-size: 1.6em;
-}
-
-p{
-  font-size: 1.6em;
-}
-
+// ***Letter Buttons*** //
 #alphabet {
   @include clear;
   margin:15px auto;
@@ -392,23 +332,40 @@ p{
   background:$white;
   color:$green;
   cursor:pointer;
-  @include corners(5px);
   border: solid 1px $white;
-
-    &:hover{
-      background:$green;
-      border: solid 1px $white;
-      color:$white;
-    }
+  @include corners(5px);
+  &:hover{
+    background:$green;
+    border: solid 1px $white;
+    color:$white;
+  }
+}
+.active {
+  @include opacity;
+  cursor:default;
+  &:hover{
+    @include fade;
+    @include opacity;
+  }
+}
+@media (max-width: 767px) {
+  #alphabet {
+    padding:0 0 0 15px;
+  }
+}
+@media (max-width: 480px) {
+  #alphabet {
+    padding:0 0 0 25px;
+  }
 }
 
+// ***The Word To Guess*** //
 #my-word {
   margin: 0;
   display: block;
   padding: 0;
   display:block;
 }
-
 #my-word li {
   position: relative;
   list-style: none;
@@ -416,22 +373,6 @@ p{
   display: inline-block;
   padding: 0 10px;
   font-size:1.6em;
-}
-
-.active {
-  @include opacity;
-  cursor:default;
-
-  &:hover{
-      @include fade;
-      @include opacity;
-    }
-}
-
-#mylives{
-  font-size:1.6em;
-  text-align:center;
-  display:block;
 }
 
 button{
@@ -446,23 +387,11 @@ button{
   width:180px;
   margin: 10px;
   outline: none;
-
-    &:hover{
-      @include transition;
-      background:$white;
-      border: solid 1px $white;
-      color:$green;
-    }
-}
-
-@media (max-width: 767px) {
-  #alphabet {
-  padding:0 0 0 15px;
-}
+  &:hover{
+    @include transition;
+    background:$white;
+    border: solid 1px $white;
+    color:$green;
   }
-
-  @media (max-width: 480px) {
-  #alphabet {
-  padding:0 0 0 25px;
 }
-  }
+
