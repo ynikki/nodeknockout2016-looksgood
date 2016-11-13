@@ -7,19 +7,20 @@ html(lang="en")
   body
     div.container
       div.artwork-container
-          div.cloudOne
-          div.cloudTwo
-          div.cloudThree
+        div.cloud-background
+          div(class="cloud move-1")
+          div(class="cloud move-2")
+          div(class="cloud move-3")
+          div(class="cloud move-4")
       div.game-container
         progress(id="health" value="22" max="100")
-        form(id="hangman")
-          input(type="text" maxlength="1" minlength="1" name="letter" id="letter" placeholder="Guess a letter")
-          input(id="guess" name="guess" type="submit" value="Guess")
-          button(id="restart" name="restart" type="button") Restart
         ul(id="letters")
         p(id="man")
         p(id="output" class="output")
+        div#result
+        div#end-img
         div#output
+        p#catagoryName
         div#health
         div#alphabets
         div.dropdown
@@ -28,18 +29,26 @@ html(lang="en")
             option(value="plants") Plants
             option(value="zombies") Zombies
             input(type='submit' value='Submit')
-          div.flower-wrapper
-            div.petal-wrapper
-              div.petal
-              div.petal
-              div.petal
-              div.petal
-              div.petal
-            div.core
-            span(class="stem")
-          div.ground-container
-            div.grass
-            div.ground
+        p#mylives
+        p#clue Clue-
+        button#reset Play again
+      div.wrapper
+        div#buttons
+        div#hold
+        button#hint Hint
+      div.flower-container
+        div.flower-wrapper
+          div.petal-wrapper
+            div.petal
+            div.petal
+            div.petal
+            div.petal
+            div.petal
+          div.core
+          span(class="stem")
+        div.ground-container
+          div.grass
+          div.ground
     script(src='/hangman.js')
     script(src="https://code.jquery.com/jquery-2.2.4.min.js")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/jquerykeyframes/0.0.9/jquery.keyframes.min.js")

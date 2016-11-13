@@ -1,6 +1,7 @@
 @import 'partials/reset';
 @import 'partials/clearfix';
 @import 'partials/colors';
+@import 'partials/words';
 @import 'partials/flower';
 
 @mixin transformation($tY, $tX, $r, $sk, $sc){
@@ -12,12 +13,12 @@
     scale($sc);
 }
 
-.container{
-  background: linear-gradient($sky, $skyBottom);
-  background: -webkit-linear-gradient($sky, $skyBottom);
-  background: -o-linear-gradient($sky, $skyBottom);
-  background: -moz-linear-gradient($sky, $skyBottom);
-}
+// .container{
+//   background: linear-gradient($sky, $skyBottom);
+//   background: -webkit-linear-gradient($sky, $skyBottom);
+//   background: -o-linear-gradient($sky, $skyBottom);
+//   background: -moz-linear-gradient($sky, $skyBottom);
+// }
 progress{
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -37,11 +38,119 @@ progress[value]::-webkit-progress-value{
   border-radius: 2px;
   background-size: 35px 20px, 100% 100%, 100% 100%;
 }
-.cloudOne{
-  background-image: url('/images/clouds.png');
-  background-repeat: no-repeat;
-  width: 133px;
-  height: 72px;
+
+
+// div{border: 1px solid red;}
+
+body {
+  overflow: hidden;
+}
+
+// CLOUDS CONTAINER //
+.cloud-background{
+  background: $light-sky;
+  background: -webkit-linear-gradient($light-sky 0%, $white 100%);
+  background: -moz-linear-gradient($light-sky 0%, $white 100%);
+  background: -o-linear-gradient($light-sky 0%, $white 100%);
+  background: linear-gradient($light-sky 0%, $white 100%);
+  padding: 25px 0 10px;
+}
+// CREATE STATIC CLOUDS //
+.cloud{
+  width: 200px;
+  height: 60px;
+  background: $white;
+  border-radius: 200px;
+  -moz-border-radius: 200px;
+  -webkit-border-radius: 200px;
+  position: relative;
+}
+.cloud:before, .cloud:after {
+  content: '';
+  position: absolute;
+  background: $white;
+  width: 100px;
+  height: 80px;
+  position: absolute;
+  top: -15px;
+  left: 10px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+.cloud:after {
+  width: 120px;
+  height: 120px;
+  top: -55px;
+  left: auto;
+  right: 15px;
+}
+// CLOUD ANIMATION //
+.move-1{
+  left: 400px;
+  top: 50px;
+  -webkit-animation: moveclouds 15s linear infinite;
+  -moz-animation: moveclouds 15s linear infinite;
+  -o-animation: moveclouds 15s linear infinite;
+  animation: moveclouds 15s linear infinite;
+}
+.move-2{
+  left: -100px;
+  top: 25px;
+  -webkit-transform: scale(0.6);
+  -moz-transform: scale(0.6);
+  transform: scale(0.6);
+  opacity: 0.6;
+  // opacity proportional to the size
+  // Speed will also be proportional to the size and opacity
+  // More the speed. Less the time in 's' = seconds
+  -webkit-animation: moveclouds 25s linear infinite;
+  -moz-animation: moveclouds 25s linear infinite;
+  -o-animation: moveclouds 25s linear infinite;
+  animation: moveclouds 25s linear infinite;
+}
+.move-3{
+  left: 450px;
+  top: -150px;
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  transform: scale(0.8);
+  opacity: 0.8;
+  -webkit-animation: moveclouds 20s linear infinite;
+  -moz-animation: moveclouds 20s linear infinite;
+  -o-animation: moveclouds 20s linear infinite;
+  animation: moveclouds 20s linear infinite;
+}
+.move-4{
+  left: -200px;
+  top: -50px;
+  -webkit-transform: scale(0.75);
+  -moz-transform: scale(0.75);
+  transform: scale(0.75);
+  opacity: 0.75;
+  -webkit-animation: moveclouds 18s linear infinite;
+  -moz-animation: moveclouds 18s linear infinite;
+  -o-animation: moveclouds 18s linear infinite;
+  animation: moveclouds 18s linear infinite;
+}
+@-webkit-keyframes moveclouds {
+  0% {margin-left: 1000px;}
+  100% {margin-left: -1000px;}
+}
+@-moz-keyframes moveclouds {
+  0% {margin-left: 1000px;}
+  100% {margin-left: -1000px;}
+}
+@-o-keyframes moveclouds {
+  0% {margin-left: 1000px;}
+  100% {margin-left: -1000px;}
+}
+@keyframes moveclouds {
+  0% {margin-left: 1000px;}
+  100% {margin-left: -1000px;}
 }
 
 .flower-wrapper{
@@ -157,3 +266,191 @@ progress[value]::-webkit-progress-value{
   width: 100%;
   bottom: 0;
 }
+
+/* Variabes */
+$orange: #ffa600;
+$green: #c1d72e;
+$blue: #82d2e5;
+$grey:#f3f3f3;
+$white: #fff;
+$base-color:$green ;
+
+/* Mixin's */
+
+@mixin transition {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+@mixin clear {
+  &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+}
+
+ @mixin box-size {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+ @mixin transition {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+@mixin fade {
+  -moz-transition: all 1s ease-in;
+  -moz-transition:all 0.3s ease-in-out;
+  -webkit-transition:all 0.3s ease-in-out;
+}
+
+@mixin opacity {
+  opacity:0.4;
+  filter:alpha(opacity=40);
+  @include fade;
+}
+
+@mixin corners ($radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  -khtml-border-radius: $radius;
+}
+
+body {
+  background:$base-color;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color:$white;
+  height:100%;
+  text-align:center;
+  font-size:18px;
+}
+
+.wrappper{
+  @include clear;
+  width:100%;
+  margin:0 auto;
+}
+
+
+canvas{
+  color:$white;
+  border: $white dashed 2px;
+  padding:15px;
+}
+
+h1, h2, h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+   margin:5px 0;
+}
+
+h1 {
+  font-size: 2.6em;
+}
+
+h2 {
+  font-size: 1.6em;
+}
+
+p{
+  font-size: 1.6em;
+}
+
+#alphabet {
+  @include clear;
+  margin:15px auto;
+  padding:0;
+  max-width:900px;
+}
+
+#alphabet li {
+  float:left;
+  margin: 0 10px 10px 0;
+  list-style:none;
+  width:35px;
+  height:30px;
+  padding-top:10px;
+  background:$white;
+  color:$base-color;
+  cursor:pointer;
+  @include corners(5px);
+  border: solid 1px $white;
+
+    &:hover{
+      background:$base-color;
+      border: solid 1px $white;
+      color:$white;
+    }
+}
+
+#my-word {
+  margin: 0;
+  display: block;
+  padding: 0;
+  display:block;
+}
+
+#my-word li {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  display: inline-block;
+  padding: 0 10px;
+  font-size:1.6em;
+}
+
+.active {
+  @include opacity;
+  cursor:default;
+
+  &:hover{
+      @include fade;
+      @include opacity;
+    }
+}
+
+#mylives{
+  font-size:1.6em;
+  text-align:center;
+  display:block;
+}
+
+button{
+  @include corners (5px);
+  background:$base-color;
+  color:$white;
+  border: solid 1px $white;
+  text-decoration:none;
+  cursor:pointer;
+  font-size:1.2em;
+  padding:18px 10px;
+  width:180px;
+  margin: 10px;
+  outline: none;
+
+    &:hover{
+      @include transition;
+      background:$white;
+      border: solid 1px $white;
+      color:$base-color;
+    }
+}
+
+@media (max-width: 767px) {
+  #alphabet {
+  padding:0 0 0 15px;
+}
+  }
+
+  @media (max-width: 480px) {
+  #alphabet {
+  padding:0 0 0 25px;
+}
+  }
