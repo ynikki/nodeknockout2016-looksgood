@@ -495,8 +495,9 @@ button {
   color: gray; }
 
 .footer {
-  padding: 10px 0;
+  padding: 10px;
   background-color: #647015; }
   .footer p {
     color: #000000;
+    line-height: 1.2;
     font-size: 0.6rem; }
