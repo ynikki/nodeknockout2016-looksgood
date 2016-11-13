@@ -5,9 +5,10 @@
 @import 'partials/flower';
 @import 'partials/mixins';
 
-@font-face {
-  font-family: 'Arcade';
-  src: url("/font/Arcade.ttf"); }
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+// @font-face {
+//   font-family: 'Arcade';
+//   src: url("/font/Arcade.ttf"); }
 
 /////////////////////////////////////
 /////      OVERALL STYLING      /////
@@ -16,7 +17,8 @@
   box-sizing: border-box;
 }
 body {
-  font-family: 'Arcade';
+  // font-family: 'Arcade';
+  font-family: 'Press Start 2P', cursive;
   color: $white;
   text-align: center;
 }
@@ -330,15 +332,15 @@ body {
   }
   .hp-value{
     padding: 5px 0;
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: #ff9c08;
   }
 }
 
 // ***The Word To Guess*** //
 .word-container{
-  padding: 5px 0;
-  font-size: 2rem;
+  padding: 10px 0;
+  font-size: 1.7rem;
   #my-word {
     margin: 0;
     padding: 0;
@@ -354,7 +356,7 @@ body {
   }
 }
 .word-category{
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: lighten($black, 50%);
 }
 
@@ -372,7 +374,7 @@ body {
     margin: 5px;
     height:35px;
     padding-top:8px;
-    font-size:26px;
+    font-size:20px;
     background:$white;
     color:$green;
     cursor:pointer;
@@ -401,8 +403,9 @@ button{
   border-radius: 5px;
   text-decoration:none;
   cursor:pointer;
-  font-family: 'Arcade';
-  font-size: 1.5rem;
+  // font-family: 'Arcade';
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.75rem;
   padding: 14px 10px 10px;
   width:180px;
   margin: 10px;
@@ -416,13 +419,13 @@ button{
 }
 
 .word-clue{
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: lighten($black, 50%);
 }
 
 .footer{
   p{
     color: $black;
-    font-size: 1rem;
+    font-size: 0.6rem;
   }
 }
