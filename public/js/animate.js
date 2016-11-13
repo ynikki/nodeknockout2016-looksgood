@@ -1,5 +1,4 @@
 var supportedFlag = $.keyframe.isSupported();
-$.keyframe.debug = true;
 
 $.keyframe.define([
   {
