@@ -6,6 +6,7 @@ html(lang="en")
     link(href='/css/styles.css', rel='stylesheet')
     script(src="https://code.jquery.com/jquery-2.2.4.min.js")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/jquerykeyframes/0.0.9/jquery.keyframes.min.js")
+    script(src="/js/animate.js")
   body
     div.container
       div.artwork-container
@@ -42,8 +43,9 @@ html(lang="en")
             div.petal
             div.petal
           div.core
-            div(id="leftEye" class="eye")
-            div(id="rightEye" class="eye")
-            div.mouth
+            div.smiley
+              div(id="leftEye" class="eye")
+              div(id="rightEye" class="eye")
+              div.mouth
           span(class="stem")
     script(src='/hangman.js')

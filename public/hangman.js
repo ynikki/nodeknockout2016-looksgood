@@ -151,6 +151,8 @@ window.onload = function () {
    // Reset
 
   document.getElementById('reset').onclick = function() {
+    var lifeBar = document.getElementById('health');
+    lifeBar.value='5';
     correct.parentNode.removeChild(correct);
     letters.parentNode.removeChild(letters);
     showClue.innerHTML = "";

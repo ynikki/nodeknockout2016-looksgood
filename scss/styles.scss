@@ -156,6 +156,16 @@ p{
   background-repeat: no-repeat;
   height: 100px;
 }
+.ground-container{
+  bottom: 0;
+}
+.grass{
+  background-image: url('/images/grass.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 200px;
+}
 
 // ***Flower Artwork*** //
 .flower-container{
@@ -180,6 +190,17 @@ p{
   overflow: hidden;
   transition: opacity 0.25s eas-in-out;
   opacity: 1;
+  margin: 15px 0 0 20px;
+}
+.smiley
+{
+  background-color: #ffff80;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 200px;
+  border-radius: 200px;
+  margin: auto;
+  position: absolute;
+  top:0; bottom:0; left:0; right:0;
 }
 .eye{
   background-color: $eye;
@@ -191,11 +212,12 @@ p{
   margin-top: 28px;
 }
 #leftEye{
-  margin-left: 15px;
+  margin-left: 12px;
 }
 #rightEye{
-  margin-left: 60px;
+  margin-left: 55px;
 }
+
 .stem{
   background: $grass;
   width: .9em;
@@ -207,11 +229,11 @@ p{
   z-index: -1;
 }
 .mouth{
-  margin-top: -50px;
+  margin-top: -55px;
   width: 80px;
   height: 125px;
   border: solid 4px $eye;
-  margin-left: 5px;
+  margin-left: 1px;
   border-color: transparent transparent $eye transparent;
   border-radius: 100px 100px 100px 100px;
 }
