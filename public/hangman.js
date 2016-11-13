@@ -28,7 +28,7 @@ window.onload = function () {
   var container = document.getElementById('end-img');
   var endImageDiv = document.createElement('div');
   endImageDiv.id = 'end-img-div';
-
+  
   function createEndImg(){
     endImage = document.createElement('img');
     endImage.id = 'end-game-image';
@@ -40,6 +40,8 @@ window.onload = function () {
   }
   createEndImg();
 
+  /// Animating the face when player lost ///
+  var unhappyFace = document.getElementById('mouth');
 
 
   // create alphabet ul
