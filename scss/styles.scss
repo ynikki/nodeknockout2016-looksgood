@@ -4,6 +4,10 @@
 @import 'partials/words';
 @import 'partials/flower';
 
+@font-face {
+  font-family: 'Arcade';
+  src: url("/font/Arcade.ttf"); }
+
 @mixin transformation($tY, $tX, $r, $sk, $sc){
   transform:
     translateY($tY)
@@ -13,12 +17,15 @@
     scale($sc);
 }
 
-// .container{
-//   background: linear-gradient($sky, $skyBottom);
-//   background: -webkit-linear-gradient($sky, $skyBottom);
-//   background: -o-linear-gradient($sky, $skyBottom);
-//   background: -moz-linear-gradient($sky, $skyBottom);
-// }
+body {
+  background:$base-color;
+  font-family: 'Arcade';
+  color:$white;
+  height:100%;
+  text-align:center;
+  font-size:18px;
+}
+
 progress{
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -37,10 +44,6 @@ progress[value]::-webkit-progress-value{
   background-color: $progressBar;
   border-radius: 2px;
   background-size: 35px 20px, 100% 100%, 100% 100%;
-}
-
-body {
-  background-color: $white;
 }
 
 // CLOUDS CONTAINER //
@@ -191,7 +194,7 @@ body {
   background: $petal-col;
   border-radius: 0 50% 50% 50%;
   box-shadow: -2px 2px 20px;
-  box-shadow: -2px -2px 20px rgba(255,255,255,0.5) 
+  box-shadow: -2px -2px 20px rgba(255,255,255,0.5)
     inset,
     0px 0px 2px rgba(0,0,0,0.5);
   box-sizing: border-box;
@@ -261,19 +264,11 @@ body {
 }
 .ground{
   left: 0;
-  background-color: $;
+  background-color: $green;
   height: 250px;
   width: 100%;
   bottom: 0;
 }
-
-/* Variabes */
-$orange: #ffa600;
-$green: #c1d72e;
-$blue: #82d2e5;
-$grey:#f3f3f3;
-$white: #fff;
-$base-color:$green ;
 
 /* Mixin's */
 
@@ -320,15 +315,6 @@ $base-color:$green ;
   -webkit-border-radius: $radius;
   border-radius: $radius;
   -khtml-border-radius: $radius;
-}
-
-body {
-  background:$base-color;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  color:$white;
-  height:100%;
-  text-align:center;
-  font-size:18px;
 }
 
 .wrappper{
