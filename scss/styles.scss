@@ -1,13 +1,13 @@
 @import 'partials/reset';
 @import 'partials/clearfix';
 @import 'partials/colors';
+@import 'partials/flower';
 
 .container{
   background: linear-gradient($sky, $skyBottom);
   background: -webkit-linear-gradient($sky, $skyBottom);
   background: -o-linear-gradient($sky, $skyBottom);
   background: -moz-linear-gradient($sky, $skyBottom);
-  height: 100vh;
 }
 progress{
   -webkit-appearance: none;
@@ -34,9 +34,30 @@ progress[value]::-webkit-progress-value{
   width: 133px;
   height: 72px;
 }
-.ground{
+
+.flowerWrapper{
+  position: relative;
+  width: $w;
+  height: $h;
+  border-radius: 0%;
+  margin: 0 auto;
+}
+
+.core{
   position: absolute;
+}
+
+.groundContainer{
   bottom: 0;
+}
+.grass{
+  background-image: url('/images/grass.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 200px;
+}
+.ground{
   left: 0;
   background-color: $grass;
   height: 250px;
