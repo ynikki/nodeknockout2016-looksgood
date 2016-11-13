@@ -215,10 +215,13 @@ window.onload = function () {
     showLives.innerHTML = "You have " + lives + " lives";
     if (lives < 1) {
       showLives.innerHTML = "Game Over";
+      endGame();
     }
     for (var i = 0; i < geusses.length; i++) {
       if (counter + space === geusses.length) {
         showLives.innerHTML = "You Win!";
+        var win = "win";
+        endGame(win);
       }
     }
   }
@@ -368,4 +371,28 @@ window.onload = function () {
     //context.clearRect(0, 0, 400, 400);
     play();
   }
+}
+function endGame(win) {
+    var container = document.getElementById('end-img');
+    var endImageDiv = document.createElement('div');
+    endImage = document.createElement('img');
+    endImage.src = '';
+    winImg = 'http://plusquotes.com/images/quotes-img/flower-25.jpg';
+    loseImg = 'http://cms.kienthuc.net.vn/uploaded/vannt/2016_09_23/hoa/nam-mo-thay-hoa-bao-truoc-dieu-gi-trong-tuong-lai-hinh-2.jpg';
+    endImage.id = 'end-game-image';
+    endImageDiv.appendChild(endImage);
+    container.appendChild(endImageDiv);
+
+    if (win) {
+      endImage.src = winImg;
+      result.innerHTML = outcomes.win;
+      result.classList.add('win');
+    } else {
+      endImage.src = loseImg;
+      result.innerHTML = outcomes.lose;
+      result.classList.add('error');
+    }
+
+    guessInput.style.display = guessButton.style.display = 'none';
+    guessInput.value = '';
 }
