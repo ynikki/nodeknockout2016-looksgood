@@ -71,8 +71,8 @@ $_precision: 10;
 $w: 15em;
 $h: $w;
 $body-col: #bbb;
-$core-col: radial-gradient(ellipse at center, rgba(247,189,0,1) 0%,rgba(247,189,0,1) 52%,rgba(247,152,0,1) 67%,rgba(247,152,0,1) 100%);
-$petal-col: linear-gradient(135deg, rgba(231,0,252,1) 0%,rgba(255,91,255,1) 75%,rgba(255,193,255,1) 100%);
+$core-col: radial-gradient(ellipse at center, rgba(247,189,0,1) 0%,rgba(255,208,20,1) 52%,rgba(242,203,50,1) 67%,rgba(255,231,92,1) 100%);
+$petal-col: linear-gradient(135deg, rgba(239,47,89,1) 0%,rgba(244,149,149,1) 75%,rgba(255,193,255,1) 100%);
 $petal-border-col: rgba(255,255,255,0.25);
 $petal-bt: 2px;
 
@@ -101,7 +101,7 @@ $ph: $d / sqrt(4/3 + 4/sqrt(3)*tan($alpha) + 1 + pow(tan($alpha), 2));
 $pw: 2 / sqrt(3) * $ph;
 
 /*number of petals */
-$np: 12;
+$np: 5;
 $angle-incr: 360deg / $np;
 
 $anim-time: 2s;
