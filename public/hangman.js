@@ -69,7 +69,7 @@ window.onload = function () {
 
   // Show hp
    comments = function () {
-    showhp.innerHTML = "You have " + hp + " hp";
+    showhp.innerHTML = "You have " + hp + " HP";
     if (hp < 1) {
       showhp.innerHTML = "I withered away :'(";
       endGame();
@@ -123,7 +123,7 @@ window.onload = function () {
     buttons();
 
     geusses = [ ];
-    hp = 10;
+    hp = 5;
     counter = 0;
     space = 0;
     result();
@@ -168,17 +168,9 @@ function endGame(win) {
     endImage.id = 'end-game-image';
     endImageDiv.appendChild(endImage);
     container.appendChild(endImageDiv);
-
     if (win) {
       endImage.src = winImg;
-      result.innerHTML = outcomes.win;
-      result.classList.add('win');
     } else {
       endImage.src = loseImg;
-      result.innerHTML = outcomes.lose;
-      result.classList.add('error');
     }
-
-    guessInput.style.display = guessButton.style.display = 'none';
-    guessInput.value = '';
 }
