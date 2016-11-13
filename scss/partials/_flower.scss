@@ -1,0 +1,107 @@
+@function sqrt($r) {
+  $x0: 1;
+  $x1: $x0;
+ 
+  @for $i from 1 through 10 {
+    $x1: $x0 - ($x0 * $x0 - abs($r)) / (2 * $x0);
+    $x0: $x1;
+  }
+ 
+  @return $x1;
+}
+$pi: 3.14159265359;
+$_precision: 10;
+
+@function pow($base, $exp) {
+  $value: $base;
+  @if $exp > 1 {
+    @for $i from 2 through $exp {
+      $value: $value * $base;
+    }
+  }
+  @if $exp < 1{
+    @for $i from 0 through -$exp {
+      $value: $value / $base;
+    }
+  }
+  @return $value;
+}
+
+@function fact($num) {
+  $fact: 1;
+  @if $num > 0{
+    @for $i from 1 through $num {
+      $fact: $fact * $i;
+    }
+  }
+  @return $fact;
+}
+
+@function _to_unitless_rad($angle) {
+  @if unit($angle) == "deg" {
+    $angle: $angle / 180deg * $pi;
+  }
+  @if unit($angle) == "rad" {
+    $angle: $angle / 1rad;
+  }
+  @return $angle;
+}
+
+@function sin($angle){
+  $a: _to_unitless_rad($angle);
+  $sin: $a;
+  @for $n from 1 through $_precision {
+    $sin: $sin + (pow(-1, $n) / fact(2 * $n + 1) ) * pow($a, (2 * $n + 1));
+  }
+  @return $sin;
+}
+
+@function cos($angle){
+  $a: _to_unitless_rad($angle);
+  $cos: 1;
+  @for $n from 1 through $_precision {
+    $cos: $cos + ( pow(-1,$n) / fact(2*$n) ) * pow($a,2*$n);
+  }
+  @return $cos;
+}
+
+@function tan($angle){
+  @return sin($angle) / cos($angle);
+}
+$w: 15em;
+$h: $w;
+$body-col: #bbb;
+$core-col: radial-gradient(ellipse at center, rgba(247,189,0,1) 0%,rgba(247,189,0,1) 52%,rgba(247,152,0,1) 67%,rgba(247,152,0,1) 100%);
+$petal-col: linear-gradient(135deg, rgba(231,0,252,1) 0%,rgba(255,91,255,1) 75%,rgba(255,193,255,1) 100%);
+$petal-border-col: rgba(255,255,255,0.25);
+$petal-bt: 2px;
+
+$cw: $w / 3;
+$ch: $cw;
+
+$r: $cw / 2;
+
+/* calculate the diagonal */
+$old-d: $w / 3;
+$DB: $old-d / 2;
+$s: sqrt(2) *  $DB;
+$CB: $s / 2 * (sqrt(2) - 1);
+$d: $old-d + $CB;
+$off: $old-d + $CB / 2;
+
+$sf: $d / $old-d;
+
+$d: $old-d;
+$off: $old-d;
+$off-ani: $off + $CB / 2;
+
+/* consider equilateral triangle*/
+$alpha: 30deg;
+$ph: $d / sqrt(4/3 + 4/sqrt(3)*tan($alpha) + 1 + pow(tan($alpha), 2));
+$pw: 2 / sqrt(3) * $ph;
+
+/*number of petals */
+$np: 12;
+$angle-incr: 360deg / $np;
+
+$anim-time: 2s;
