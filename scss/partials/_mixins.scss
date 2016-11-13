@@ -69,3 +69,10 @@
   filter:alpha(opacity=40);
   @include fade;
 }
+
+@mixin corners ($radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  -khtml-border-radius: $radius;
+}
