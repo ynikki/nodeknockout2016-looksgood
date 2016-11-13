@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -101,15 +102,11 @@ table {
 /* consider equilateral triangle*/
 /*number of petals */
 /* Mixin's */
-@font-face {
-  font-family: 'Arcade';
-  src: url("/font/Arcade.ttf"); }
-
 * {
   box-sizing: border-box; }
 
 body {
-  font-family: 'Arcade';
+  font-family: 'Press Start 2P', cursive;
   color: #FFFFFF;
   text-align: center; }
 
@@ -193,10 +190,13 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100px; }
+  height: 125px; }
 
 .flower-container {
-  position: relative; }
+  position: relative;
+  top: -175px;
+  margin-bottom: -175px;
+  margin-left: calc(50% - 120px); }
 
 .flower-wrapper {
   width: 15em;
@@ -407,12 +407,12 @@ body {
 
 .progress-container .hp-value {
   padding: 5px 0;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: #ff9c08; }
 
 .word-container {
-  padding: 5px 0;
-  font-size: 2rem; }
+  padding: 10px 0;
+  font-size: 1.7rem; }
   .word-container #my-word {
     margin: 0;
     padding: 0;
@@ -426,7 +426,7 @@ body {
     font-size: 1.6em; }
 
 .word-category {
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: gray; }
 
 .alphabet-container {
@@ -444,7 +444,7 @@ body {
     margin: 5px;
     height: 35px;
     padding-top: 8px;
-    font-size: 26px;
+    font-size: 20px;
     background: #FFFFFF;
     color: #c1d72e;
     cursor: pointer;
@@ -478,8 +478,8 @@ button {
   border-radius: 5px;
   text-decoration: none;
   cursor: pointer;
-  font-family: 'Arcade';
-  font-size: 1.5rem;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.75rem;
   padding: 14px 10px 10px;
   width: 180px;
   margin: 10px;
@@ -491,9 +491,12 @@ button {
     color: #c1d72e; }
 
 .word-clue {
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: gray; }
 
-.footer p {
-  color: #000000;
-  font-size: 1rem; }
+.footer {
+  padding: 10px 0;
+  background-color: #647015; }
+  .footer p {
+    color: #000000;
+    font-size: 0.6rem; }
