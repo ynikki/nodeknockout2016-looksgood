@@ -37,7 +37,6 @@ window.onload = function () {
   /// Animating the face when player lost ///
   var unhappyFace = document.getElementById('mouth');
 
-
   // create alphabet ul
   var buttons = function () {
     myButtons = document.getElementById('letter-buttons');
@@ -53,7 +52,6 @@ window.onload = function () {
       letters.appendChild(list);
     }
   }
-
 
   document.getElementById("categories").onchange = function() {
     var catValue = document.getElementById("categories").value;
@@ -125,6 +123,37 @@ window.onload = function () {
     }
   }
 
+  // OnKeyPress Function
+  function typeAnswer(){
+    window.onkeypress = function(){
+      var geuss = (event.key);
+      var allKeys = document.getElementsByClassName("letter-keys");
+      for (var i = 0; i < allKeys[0].children.length; i++) {
+        var settingAttributeHTML = allKeys[0].children[i].innerHTML;
+        if (geuss === settingAttributeHTML){
+          var settingAttribute = allKeys[0].children[i];
+          settingAttribute.setAttribute("class", "active");
+        }
+      }
+      check();
+      for (var i = 0; i < word.length; i++) {
+        if (word[i] === geuss) {
+          tries[i].innerHTML = geuss;
+          counter += 1;
+        }
+      }
+      var j = (word.indexOf(geuss));
+      var lifeBar = document.getElementById('health');
+      if (j === -1) {
+        hp -= 1;
+        lifeBar.value--;
+        comments();
+      } else {
+        comments();
+      }
+    };
+  }
+
   // OnClick Function
   check = function () {
     list.onclick = function () {
@@ -178,6 +207,7 @@ window.onload = function () {
 
     word = chosenCategory[Math.floor(Math.random() * chosenCategory.length)];
     word = word.replace(/\s/g, "-");
+    console.log(word);
     buttons();
 
     tries = [ ];
@@ -188,6 +218,7 @@ window.onload = function () {
     result();
     comments();
     selectCat();
+    typeAnswer();
   };
   play();
 
