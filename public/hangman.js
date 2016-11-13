@@ -181,18 +181,18 @@ window.onload = function () {
         hp -= 1;
         lifeBar.value--;
         if(lifeBar.value === 4){
-          firstPetal.style.display = "none";
+          $("#petalOne").fadeOut(500);
         }else if(lifeBar.value === 3){
-          secondPetal.style.display = "none";
+          $("#petalTwo").fadeOut(500);
         }else if(lifeBar.value === 2){
-          thirdPetal.style.display = "none";
+          $("#petalThree").fadeOut(500);
           unhappyFace.style.transform = "rotate(180deg)";
           unhappyFace.style.marginTop = "47px";
           unhappyFace.style.transitionTimingFunction = "ease";
         }else if(lifeBar.value === 1){
-          fourthPetal.style.display = "none";
+          $("#petalFour").fadeOut(500);
         }else if(lifeBar.value === 0) {
-          fifthPetal.style.display = "none";
+          $("#petalFive").fadeOut(500);
           leftEye.style.height = "5px";
           leftEye.style.marginTop = "32px";
           rightEye.style.height = "5px";
