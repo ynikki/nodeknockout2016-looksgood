@@ -311,17 +311,21 @@ body {
     border: none;
     border-radius: 2px;
     width: 250px;
-    height: 20px;
+    height: 25px;
   }
-  progress[value]::-webkit-progress-bar{
+  progress::-webkit-progress-bar{
     background-color: #eee;
     border-radius: 2px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+    padding: 1px;
+    box-shadow:inset 0px 2px 3px #bbb;
   }
-  progress[value]::-webkit-progress-value{
-    background-color: $progressBar;
+  progress::-webkit-progress-value {
     border-radius: 2px;
-    background-size: 35px 20px, 100% 100%, 100% 100%;
+    background-color: $progressBar;
+    box-shadow:inset 0px 2px 8px rgba(255, 255, 255, .5), inset -1px -1px 0px rgba(0, 0, 0, .2);
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+      transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+      transparent 75%, transparent);
   }
   .hp-value{
     padding: 5px 0;
