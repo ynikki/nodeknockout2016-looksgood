@@ -5,26 +5,28 @@ html(lang="en")
     title 2016 Node Knockout
     link(href='/css/styles.css', rel='stylesheet')
   body
-    div#output
-    div#health
-    div#alphabets
-    div.dropdown
-      select(id="categories")
-        option(value="") Select a category
-        option(value="plants") Plants
-        option(value="zombies") Zombies
-        input(type='submit' value='Submit')
     div.container
-      div.cloudOne
-      div.cloudTwo
-      div.cloudThree
-      progress(id="health" value="22" max="100")
-      form(id="hangman")
-        input(type="text" maxlength="1" minlength="1" name="letter" id="letter" placeholder="Guess a letter")
-        input(id="guess" name="guess" type="submit" value="Guess")
-        button(id="restart" name="restart" type="button") Restart
-      ul(id="letters")
-      p(id="man")
-      p(id="output" class="output")
-      div.ground
+      div.artwork-container
+          div.cloudOne
+          div.cloudTwo
+          div.cloudThree
+      div.game-container
+        progress(id="health" value="22" max="100")
+        form(id="hangman")
+          input(type="text" maxlength="1" minlength="1" name="letter" id="letter" placeholder="Guess a letter")
+          input(id="guess" name="guess" type="submit" value="Guess")
+          button(id="restart" name="restart" type="button") Restart
+        ul(id="letters")
+        p(id="man")
+        p(id="output" class="output")
+        div#output
+        div#health
+        div#alphabets
+        div.dropdown
+          select(id="categories")
+            option(value="") Select a category
+            option(value="plants") Plants
+            option(value="zombies") Zombies
+            input(type='submit' value='Submit')
+          div.ground
     script(src='/hangman.js')
