@@ -195,7 +195,8 @@ body {
 .flower-container {
   position: relative;
   top: -175px;
-  margin-bottom: -175px; }
+  margin-bottom: -175px;
+  margin-left: calc(50% - 120px); }
 
 .flower-wrapper {
   width: 15em;
