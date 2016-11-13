@@ -147,6 +147,24 @@ window.onload = function () {
       if (j === -1) {
         hp -= 1;
         lifeBar.value--;
+        if(lifeBar.value === 4){
+          $("#petalOne").fadeOut(500);
+        }else if(lifeBar.value === 3){
+          $("#petalTwo").fadeOut(500);
+        }else if(lifeBar.value === 2){
+          $("#petalThree").fadeOut(500);
+          unhappyFace.style.transform = "rotate(180deg)";
+          unhappyFace.style.marginTop = "47px";
+          unhappyFace.style.transitionTimingFunction = "ease";
+        }else if(lifeBar.value === 1){
+          $("#petalFour").fadeOut(500);
+        }else if(lifeBar.value === 0) {
+          $("#petalFive").fadeOut(500);
+          leftEye.style.height = "5px";
+          leftEye.style.marginTop = "32px";
+          rightEye.style.height = "5px";
+          rightEye.style.marginTop = "32px";
+        }
         comments();
       } else {
         comments();
@@ -160,11 +178,11 @@ window.onload = function () {
     var unhappyFace = document.getElementById('mouth');
     var leftEye = document.getElementById('leftEye');
     var rightEye = document.getElementById('rightEye');
-    var firstPetal = document.getElementById('petalOne');
-    var secondPetal = document.getElementById('petalTwo');
-    var thirdPetal = document.getElementById('petalThree');
-    var fourthPetal = document.getElementById('petalFour');
-    var fifthPetal = document.getElementById('petalFive');
+    // var firstPetal = document.getElementById('petalOne');
+    // var secondPetal = document.getElementById('petalTwo');
+    // var thirdPetal = document.getElementById('petalThree');
+    // var fourthPetal = document.getElementById('petalFour');
+    // var fifthPetal = document.getElementById('petalFive');
     list.onclick = function () {
       var geuss = (this.innerHTML);
       this.setAttribute("class", "active");
@@ -181,18 +199,18 @@ window.onload = function () {
         hp -= 1;
         lifeBar.value--;
         if(lifeBar.value === 4){
-          firstPetal.style.display = "none";
+          $("#petalOne").fadeOut(500);
         }else if(lifeBar.value === 3){
-          secondPetal.style.display = "none";
+          $("#petalTwo").fadeOut(500);
         }else if(lifeBar.value === 2){
-          thirdPetal.style.display = "none";
+          $("#petalThree").fadeOut(500);
           unhappyFace.style.transform = "rotate(180deg)";
           unhappyFace.style.marginTop = "47px";
           unhappyFace.style.transitionTimingFunction = "ease";
         }else if(lifeBar.value === 1){
-          fourthPetal.style.display = "none";
+          $("#petalFour").fadeOut(500);
         }else if(lifeBar.value === 0) {
-          fifthPetal.style.display = "none";
+          $("#petalFive").fadeOut(500);
           leftEye.style.height = "5px";
           leftEye.style.marginTop = "32px";
           rightEye.style.height = "5px";
