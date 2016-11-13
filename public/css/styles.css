@@ -221,6 +221,7 @@ body {
   margin: 15px 0 0 20px; }
 
 .smiley {
+  z-index: 10;
   background-color: #ffff80;
   border-radius: 200px;
   margin: auto;
@@ -258,19 +259,51 @@ body {
 .stem {
   background: #CFF27E;
   width: .9em;
-  height: 18em;
+  height: 10em;
   display: block;
   position: absolute;
-  left: 143px;
-  bottom: 230px;
-  z-index: -1; }
+  left: 130px;
+  bottom: -95px; }
+  .stem:after {
+    content: '';
+    transform: rotate(7deg);
+    -ms-transform: rotate(7deg);
+    -webkit-transform: rotate(7deg);
+    -moz-transform-origin: left;
+    -webkit-transform-origin: left;
+    width: 3em;
+    height: 3em;
+    display: block;
+    background: #a8cb7a;
+    border-radius: 2em 0em 2em 0em;
+    box-shadow: 0 0 0 0.2em #a1c76f inset;
+    top: 1em;
+    left: 1.06em;
+    position: absolute; }
+  .stem:before {
+    transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    -webkit-transform: rotate(-10deg);
+    -moz-transform-origin: right;
+    -webkit-transform-origin: right;
+    content: '';
+    width: 3em;
+    height: 3em;
+    display: block;
+    background: #a3c872;
+    border-radius: 0em 2em 0em 2em;
+    box-shadow: 0 0 0 0.2em #a1c76f inset;
+    position: absolute;
+    left: -3.2em;
+    top: 2.2em; }
 
 .petal-wrapper {
   position: absolute;
   top: 0;
   left: 0;
   width: 15em;
-  height: 15em; }
+  height: 15em;
+  z-index: 10; }
 
 .petal {
   position: absolute;

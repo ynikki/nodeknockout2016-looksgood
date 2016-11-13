@@ -15,6 +15,20 @@ html(lang="en")
           div(class="cloud move-2")
           div(class="cloud move-3")
           div(class="cloud move-4")
+        div.flower-container
+          div.flower-wrapper
+            div.petal-wrapper
+              div(class="petal" id="petalOne")
+              div(class="petal" id="petalTwo")
+              div(class="petal" id="petalThree")
+              div(class="petal" id="petalFour")
+              div(class="petal" id="petalFive")
+            div.core
+              div.smiley
+                div(id="leftEye" class="eye")
+                div(id="rightEye" class="eye")
+                div(id="mouth")
+          span(class="stem")
         div.grass-container
           div.grass
       div.game-container
@@ -34,20 +48,6 @@ html(lang="en")
         button#hint Hint
         button#reset Play Again
         p(id="clue" class="word-clue")
-      div.flower-container
-        div.flower-wrapper
-          div.petal-wrapper
-            div(class="petal" id="petalOne")
-            div(class="petal" id="petalTwo")
-            div(class="petal" id="petalThree")
-            div(class="petal" id="petalFour")
-            div(class="petal" id="petalFive")
-          div.core
-            div.smiley
-              div(id="leftEye" class="eye")
-              div(id="rightEye" class="eye")
-              div(id="mouth")
-          span(class="stem")
       div.footer
         p Copyright &copy; 2016 Word Garden. All Rights Reserved
     script(src='/js/animate.js')
