@@ -350,13 +350,13 @@ p{
 // ***Letter Buttons*** //
 .alphabet-container{
   margin: 15px auto;
-  #alphabet {
+  .letter-keys {
     margin: 0 auto;
     max-width: 800px;
     display: flex;
     flex-flow: row wrap;
   }
-  #alphabet li {
+  .letter-keys li {
     flex: 0 0 35px;
     margin: 5px;
     height:35px;

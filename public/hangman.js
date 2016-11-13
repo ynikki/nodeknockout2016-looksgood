@@ -52,7 +52,7 @@ window.onload = function () {
     letters3 = document.createElement('ul');
 
     for (var i = 0; i < keyRow1.length; i++) {
-      letters1.className = 'keyRow';
+      letters1.className = 'letter-keys';
       list = document.createElement('li');
       list.id = 'letter';
       list.innerHTML = keyRow1[i];
@@ -61,7 +61,7 @@ window.onload = function () {
       letters1.appendChild(list);
     }
     for (var j = 0; j < keyRow2.length; j++) {
-      letters2.className = 'keyRow';
+      letters2.className = 'letter-keys';
       list = document.createElement('li');
       list.id = 'letter';
       list.innerHTML = keyRow2[j];
@@ -70,7 +70,7 @@ window.onload = function () {
       letters2.appendChild(list);
     }
     for (var k = 0; k < keyRow3.length; k++) {
-      letters3.className = 'keyRow';
+      letters3.className = 'letter-keys';
       list = document.createElement('li');
       list.id = 'letter';
       list.innerHTML = keyRow3[k];
