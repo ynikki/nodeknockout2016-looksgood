@@ -125,7 +125,8 @@ window.onload = function () {
   check = function () {
     // var lifeBar = document.getElementById('health');
     var unhappyFace = document.getElementById('mouth');
-    var eyes = document.getElementsByClassName('eye');
+    var leftEye = document.getElementById('leftEye');
+    var rightEye = document.getElementById('rightEye');
     var petal = document.getElementsByClassName('petal');
     list.onclick = function () {
       var geuss = (this.innerHTML);
@@ -144,8 +145,13 @@ window.onload = function () {
         lifeBar.value--;
         if(lifeBar.value === 2){
           unhappyFace.style.transform = "rotate(180deg)";
-          unhappyFace.style.marginTop = "51px";
+          unhappyFace.style.marginTop = "47px";
           unhappyFace.style.transitionTimingFunction = "ease";
+        } else if(lifeBar.value === 0) {
+          leftEye.style.height = "5px";
+          leftEye.style.marginTop = "32px";
+          rightEye.style.height = "5px";
+          rightEye.style.marginTop = "32px";
         }
         comments();
       } else {
