@@ -156,6 +156,15 @@ window.onload = function () {
 
   // OnClick Function
   check = function () {
+    // var lifeBar = document.getElementById('health');
+    var unhappyFace = document.getElementById('mouth');
+    var leftEye = document.getElementById('leftEye');
+    var rightEye = document.getElementById('rightEye');
+    var firstPetal = document.getElementById('petalOne');
+    var secondPetal = document.getElementById('petalTwo');
+    var thirdPetal = document.getElementById('petalThree');
+    var fourthPetal = document.getElementById('petalFour');
+    var fifthPetal = document.getElementById('petalFive');
     list.onclick = function () {
       var geuss = (this.innerHTML);
       this.setAttribute("class", "active");
@@ -171,6 +180,24 @@ window.onload = function () {
       if (j === -1) {
         hp -= 1;
         lifeBar.value--;
+        if(lifeBar.value === 4){
+          firstPetal.style.display = "none";
+        }else if(lifeBar.value === 3){
+          secondPetal.style.display = "none";
+        }else if(lifeBar.value === 2){
+          thirdPetal.style.display = "none";
+          unhappyFace.style.transform = "rotate(180deg)";
+          unhappyFace.style.marginTop = "47px";
+          unhappyFace.style.transitionTimingFunction = "ease";
+        }else if(lifeBar.value === 1){
+          fourthPetal.style.display = "none";
+        }else if(lifeBar.value === 0) {
+          fifthPetal.style.display = "none";
+          leftEye.style.height = "5px";
+          leftEye.style.marginTop = "32px";
+          rightEye.style.height = "5px";
+          rightEye.style.marginTop = "32px";
+        }
         comments();
       } else {
         comments();
@@ -222,6 +249,10 @@ window.onload = function () {
   };
   play();
 
+  function testing() {
+    console.log('hi');
+  }
+
   // Hint
   hint.onclick = function() {
     hints = [
@@ -256,5 +287,7 @@ function endGame(win) {
       endImage.src = winImg;
     } else {
       endImage.src = loseImg;
+      var cloud = document.getElementById('cloud');
+      cloud.className = 'sad-background';
     }
 }
