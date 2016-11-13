@@ -146,10 +146,6 @@ window.onload = function () {
           unhappyFace.style.transform = "rotate(180deg)";
           unhappyFace.style.marginTop = "51px";
           unhappyFace.style.transitionTimingFunction = "ease";
-        } else if(lifeBar.value === 1) {
-          eyes.style.transform = "translateY(20px)";
-          eyes.style.transform = "translateX(5px)";
-          eyes.style.transform = "rotate(27deg)";
         }
         comments();
       } else {
