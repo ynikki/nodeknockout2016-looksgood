@@ -221,6 +221,7 @@ body {
   margin: 15px 0 0 20px; }
 
 .smiley {
+  z-index: 10;
   background-color: #ffff80;
   border-radius: 200px;
   margin: auto;
@@ -258,19 +259,19 @@ body {
 .stem {
   background: #CFF27E;
   width: .9em;
-  height: 18em;
+  height: 10em;
   display: block;
   position: absolute;
-  left: 143px;
-  bottom: 230px;
-  z-index: -1; }
+  left: 130px;
+  bottom: -95px; }
 
 .petal-wrapper {
   position: absolute;
   top: 0;
   left: 0;
   width: 15em;
-  height: 15em; }
+  height: 15em;
+  z-index: 10; }
 
 .petal {
   position: absolute;
@@ -413,12 +414,12 @@ body {
     padding-top: 8px;
     font-size: 26px;
     background: #FFFFFF;
-    color: #c1d72e;
+    color: #b4d28c;
     cursor: pointer;
     border: solid 1px #FFFFFF;
     border-radius: 4px; }
     .alphabet-container .letter-keys li:hover {
-      background: #c1d72e;
+      background: #b4d28c;
       border: solid 1px #FFFFFF;
       color: #FFFFFF; }
   .alphabet-container .active {
@@ -439,7 +440,7 @@ body {
       -webkit-transition: all 0.3s ease-in-out; }
 
 button {
-  background: #c1d72e;
+  background: #b4d28c;
   color: #FFFFFF;
   border: solid 1px #FFFFFF;
   border-radius: 5px;
@@ -455,7 +456,7 @@ button {
     transition: all 0.3s ease-in-out;
     background: #FFFFFF;
     border: solid 1px #FFFFFF;
-    color: #c1d72e; }
+    color: #b4d28c; }
 
 .word-clue {
   font-size: 1.5rem;
