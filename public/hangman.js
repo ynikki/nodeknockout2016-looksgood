@@ -1,8 +1,6 @@
 window.onload = function () {
 
-  var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-        'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-        't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
   var categories;         // Array of topics
   var chosenCategory;     // Selected catagory
@@ -10,12 +8,12 @@ window.onload = function () {
   var word ;              // Selected word
   var guess ;             // Geuss
   var geusses = [ ];      // Stored geusses
-  var lives ;             // Lives
+  var hp ;             // hp
   var counter ;           // Count correct geusses
   var space;              // Number of spaces in word '-'
 
   // Get elements
-  var showLives = document.getElementById("mylives");
+  var showhp = document.getElementById("myhp");
   var showCatagory = document.getElementById("scatagory");
   var getHint = document.getElementById("hint");
   var showClue = document.getElementById("clue");
@@ -69,16 +67,16 @@ window.onload = function () {
     }
   }
 
-  // Show lives
+  // Show hp
    comments = function () {
-    showLives.innerHTML = "You have " + lives + " lives";
-    if (lives < 1) {
-      showLives.innerHTML = "I withered away :'(";
+    showhp.innerHTML = "You have " + hp + " hp";
+    if (hp < 1) {
+      showhp.innerHTML = "I withered away :'(";
       endGame();
     }
     for (var i = 0; i < geusses.length; i++) {
       if (counter + space === geusses.length) {
-        showLives.innerHTML = "I'm ALIVE!";
+        showhp.innerHTML = "I'm ALIVE!";
         var win = "win";
         endGame(win);
       }
@@ -100,7 +98,7 @@ window.onload = function () {
       var j = (word.indexOf(geuss));
       var lifeBar = document.getElementById('health');
       if (j === -1) {
-        lives -= 1;
+        hp -= 1;
         lifeBar.value--;
         comments();
       } else {
@@ -125,7 +123,7 @@ window.onload = function () {
     buttons();
 
     geusses = [ ];
-    lives = 10;
+    hp = 10;
     counter = 0;
     space = 0;
     result();
