@@ -18,21 +18,21 @@ window.onload = function () {
   var getHint = document.getElementById("hint");
   var showClue = document.getElementById("clue");
 
-  // Create Image When Game Ends
-  var container = document.getElementById('end-img');
-  var endImageDiv = document.createElement('div');
-  endImageDiv.id = 'end-img-div';
+  // // Create Image When Game Ends
+  // var container = document.getElementById('end-img');
+  // var endImageDiv = document.createElement('div');
+  // endImageDiv.id = 'end-img-div';
 
-  function createEndImg(){
-    endImage = document.createElement('img');
-    endImage.id = 'end-game-image';
-    endImage.src = '';
-    endImageDiv.appendChild(endImage);
-    container.appendChild(endImageDiv);
-    endImageDiv.appendChild(endImage);
-    container.appendChild(endImageDiv);
-  }
-  createEndImg();
+  // function createEndImg(){
+  //   endImage = document.createElement('img');
+  //   endImage.id = 'end-game-image';
+  //   endImage.src = '';
+  //   endImageDiv.appendChild(endImage);
+  //   container.appendChild(endImageDiv);
+  //   endImageDiv.appendChild(endImage);
+  //   container.appendChild(endImageDiv);
+  // }
+  // createEndImg();
 
   /// Animating the face when player lost ///
   var unhappyFace = document.getElementById('mouth');
@@ -111,12 +111,12 @@ window.onload = function () {
   comments = function () {
     showhp.innerHTML = "You have " + hp + " HP";
     if (hp < 1) {
-      showhp.innerHTML = "I withered away :'(";
+      showhp.innerHTML = "Sorry, try again next time.";
       endGame();
     }
     for (var i = 0; i < tries.length; i++) {
       if (counter + space === tries.length) {
-        showhp.innerHTML = "I'm ALIVE!";
+        showhp.innerHTML = "Good Job!";
         var win = "win";
         endGame(win);
       }
@@ -299,13 +299,15 @@ window.onload = function () {
 };
 
 function endGame(win) {
-    winImg = 'http://plusquotes.com/images/quotes-img/flower-25.jpg';
-    loseImg = 'http://cms.kienthuc.net.vn/uploaded/vannt/2016_09_23/hoa/nam-mo-thay-hoa-bao-truoc-dieu-gi-trong-tuong-lai-hinh-2.jpg';
-    if (win) {
-      endImage.src = winImg;
-    } else {
-      endImage.src = loseImg;
+    // winImg = 'http://plusquotes.com/images/quotes-img/flower-25.jpg';
+    // loseImg = 'http://cms.kienthuc.net.vn/uploaded/vannt/2016_09_23/hoa/nam-mo-thay-hoa-bao-truoc-dieu-gi-trong-tuong-lai-hinh-2.jpg';
+    if (!win) {
       var cloud = document.getElementById('cloud');
       cloud.className = 'sad-background';
+      // endImage.src = winImg;
+    // } else {
+      // endImage.src = loseImg;
+      // var cloud = document.getElementById('cloud');
+      // cloud.className = 'sad-background';
     }
 }
