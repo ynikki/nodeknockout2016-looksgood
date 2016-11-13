@@ -1,0 +1,1 @@
+var blinkingFace = $.keyframe.isSupported();
