@@ -1,9 +1,9 @@
 (function () {
-    var validLetters, words, guessInput, guess, guessButton, guessedLetter, matchedLetter, output, health, letters, currentWord, numMatchedLetter, hp, outcomes;
+    var validLetters, words, guessInput, guess, guessButton, guessedLetter, matchedLetter, result, health, letters, currentWord, numMatchedLetter, hp, outcomes, endImage, selection, winImg, loseImg;
 
     var wordBank = {
       'plants': ['peashooter', 'sunflower', 'cherry bomb', 'potato mine', 'chomper'],
-      'zombies': ['conehead', 'pole vaulting', 'buckethead', 'newspaper', 'dancing']
+      'zombies': ['conehead', 'flag', 'buckethead', 'newspaper', 'dancing']
     };
 
     var newPlants = wordBank.plants[Math.floor(Math.random() * wordBank.plants.length)];
@@ -13,7 +13,7 @@
         /* start config options */
         validLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
         hp = 5;
-        words = ['conehead', 'pole vaulting', 'buckethead', 'newspaper', 'dancing'];
+        words = ['conehead', 'flag', 'buckethead', 'newspaper', 'dancing'];
         outcomes = {
           win: "I'm ALIVE!",
           lose: "I withered away :'(",
@@ -29,13 +29,13 @@
         /* choose a word */
         currentWord = words[Math.floor(Math.random() * words.length)];
 
-        /* make #health and #output blank, create vars for later access */
-        output = document.getElementById("output");
+        /* make #health and #app blank, create vars for later access */
+        result = document.getElementById("result");
         health = document.getElementById("health");
         guessInput = document.getElementById("letter");
 
         health.innerHTML = 'You have ' + hp + ' hp remaining';
-        output.innerHTML = '';
+        result.innerHTML = '';
 
         document.getElementById("letter").value = '';
 
@@ -56,12 +56,24 @@
     }
 
     function endGame(win) {
+        var container = document.getElementById('end-img');
+        var endImageDiv = document.createElement('div');
+        endImage = document.createElement('img');
+        endImage.src = '';
+        winImg = 'http://plusquotes.com/images/quotes-img/flower-25.jpg';
+        loseImg = 'http://cms.kienthuc.net.vn/uploaded/vannt/2016_09_23/hoa/nam-mo-thay-hoa-bao-truoc-dieu-gi-trong-tuong-lai-hinh-2.jpg';
+        endImage.id = 'end-game-image';
+        endImageDiv.appendChild(endImage);
+        container.appendChild(endImageDiv);
+
         if (win) {
-            output.innerHTML = outcomes.win;
-            output.classList.add('win');
+          endImage.src = winImg;
+          result.innerHTML = outcomes.win;
+          result.classList.add('win');
         } else {
-            output.innerHTML = outcomes.lose;
-            output.classList.add('error');
+          endImage.src = loseImg;
+          result.innerHTML = outcomes.lose;
+          result.classList.add('error');
         }
 
         guessInput.style.display = guessButton.style.display = 'none';
@@ -82,8 +94,8 @@
     /* main guess function when user clicks #guess */
     document.getElementById('hangman').onsubmit = function (e) {
         if (e.preventDefault) e.preventDefault();
-        output.innerHTML = '';
-        output.classList.remove('error', 'warning');
+        result.innerHTML = '';
+        result.classList.remove('error', 'warning');
         guess = guessInput.value;
 
         /* does guess have a value? if yes continue, if no, error */
@@ -92,8 +104,8 @@
             if (validLetters.indexOf(guess) > -1) {
                 /* has it been guessed (missed or matched) already? if so, abandon & add notice */
                 if ((matchedLetter && matchedLetter.indexOf(guess) > -1) || (guessedLetter && guessedLetter.indexOf(guess) > -1)) {
-                    output.innerHTML = '"' + guess.toUpperCase() + '"' + outcomes.guessed;
-                    output.classList.add("warning");
+                    result.innerHTML = '"' + guess.toUpperCase() + '"' + outcomes.guessed;
+                    result.classList.add("warning");
                 }
                 /* does guess exist in current word? if so, add to letters already matched, if final letter added, game over with win message */
                 else if (currentWord.indexOf(guess) > -1) {
@@ -126,14 +138,14 @@
             }
             /* not a valid letter, error */
             else {
-                output.classList.add('error');
-                output.innerHTML = outcomes.validation;
+                result.classList.add('error');
+                result.innerHTML = outcomes.validation;
             }
         }
         /* no letter entered, error */
         else {
-            output.classList.add('error');
-            output.innerHTML = outcomes.validation;
+            result.classList.add('error');
+            result.innerHTML = outcomes.validation;
         }
         return false;
     };
