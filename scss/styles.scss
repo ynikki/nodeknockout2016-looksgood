@@ -3,45 +3,23 @@
 @import 'partials/colors';
 @import 'partials/words';
 @import 'partials/flower';
+@import 'partials/mixins';
 
-@mixin transformation($tY, $tX, $r, $sk, $sc){
-  transform:
-    translateY($tY)
-    translateX($tX)
-    rotate($r)
-    skewX($sk)
-    scale($sc);
+@font-face {
+  font-family: 'Arcade';
+  src: url("/font/Arcade.ttf"); }
+
+* {
+  box-sizing: border-box;
 }
 
-@mixin config($w, $top, $border-color, $border-width, $leaves){
-  height: $w;
-  width: $w;
-  opacity: 0;
-  margin-top: $top;
-  border-radius: $w * 5;
-  border: $border-width solid $border-color;
-  box-shadow: 0 0 0 .2em
-    darken($border-color, 4), 0 0 0 .2em;
-  span{
-    top: $w + $border-width + .2em;
-    left: $w/2.3;
-    @if $leaves == 1 {
-      &:before{
-        display: block;
-      }
-      &:after{
-        display: block;
-      }
-    @if $leaves == 2 {
-      &:before{
-        display: block;
-      }
-      &:after{
-        display: block;
-      }
-    }
-    }
-  }
+body {
+  background:$green;
+  font-family: 'Arcade';
+  color:$white;
+  height:100%;
+  text-align:center;
+  font-size:18px;
 }
 
 progress{
@@ -62,10 +40,6 @@ progress[value]::-webkit-progress-value{
   background-color: $progressBar;
   border-radius: 2px;
   background-size: 35px 20px, 100% 100%, 100% 100%;
-}
-
-body {
-  background-color: $white;
 }
 
 // CLOUDS CONTAINER //
@@ -127,9 +101,6 @@ body {
   -moz-transform: scale(0.6);
   transform: scale(0.6);
   opacity: 0.6;
-  // opacity proportional to the size
-  // Speed will also be proportional to the size and opacity
-  // More the speed. Less the time in 's' = seconds
   -webkit-animation: moveclouds 25s linear infinite;
   -moz-animation: moveclouds 25s linear infinite;
   -o-animation: moveclouds 25s linear infinite;
@@ -250,7 +221,7 @@ body {
   background: $petal-col;
   border-radius: 0 50% 50% 50%;
   box-shadow: -2px 2px 20px;
-  box-shadow: -2px -2px 20px rgba(255,255,255,0.5) 
+  box-shadow: -2px -2px 20px rgba(255,255,255,0.5)
     inset,
     0px 0px 2px rgba(0,0,0,0.5);
   box-sizing: border-box;
@@ -326,16 +297,7 @@ body {
   bottom: 0;
 }
 
-/* Variabes */
-$orange: #ffa600;
-$green: #c1d72e;
-$blue: #82d2e5;
-$grey:#f3f3f3;
-$white: #fff;
-$base-color:$green ;
-
 /* Mixin's */
-
 @mixin transition {
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
@@ -379,15 +341,6 @@ $base-color:$green ;
   -webkit-border-radius: $radius;
   border-radius: $radius;
   -khtml-border-radius: $radius;
-}
-
-body {
-  background:$base-color;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  color:$white;
-  height:100%;
-  text-align:center;
-  font-size:18px;
 }
 
 .wrappper{
@@ -437,13 +390,13 @@ p{
   height:30px;
   padding-top:10px;
   background:$white;
-  color:$base-color;
+  color:$green;
   cursor:pointer;
   @include corners(5px);
   border: solid 1px $white;
 
     &:hover{
-      background:$base-color;
+      background:$green;
       border: solid 1px $white;
       color:$white;
     }
@@ -483,7 +436,7 @@ p{
 
 button{
   @include corners (5px);
-  background:$base-color;
+  background:$green;
   color:$white;
   border: solid 1px $white;
   text-decoration:none;
@@ -498,7 +451,7 @@ button{
       @include transition;
       background:$white;
       border: solid 1px $white;
-      color:$base-color;
+      color:$green;
     }
 }
 
