@@ -1,6 +1,12 @@
 window.onload = function () {
 
-  var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  // var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
+  // var alphabet = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm'];
+
+  var keyRow1 = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'];
+  var keyRow2 = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'];
+  var keyRow3 = ['z', 'x', 'c', 'v', 'b', 'n', 'm'];
 
   var categories;         // Array of topics
   var chosenCategory;     // Selected catagory
@@ -39,17 +45,38 @@ window.onload = function () {
   // create alphabet ul
   var buttons = function () {
     myButtons = document.getElementById('letter-buttons');
-    letters = document.createElement('ul');
+    letters1 = document.createElement('ul');
+    letters2 = document.createElement('ul');
+    letters3 = document.createElement('ul');
 
-    for (var i = 0; i < alphabet.length; i++) {
-      letters.id = 'alphabet';
+    for (var i = 0; i < keyRow1.length; i++) {
+      letters1.className = 'keyRow';
       list = document.createElement('li');
       list.id = 'letter';
-      list.innerHTML = alphabet[i];
+      list.innerHTML = keyRow1[i];
       check();
-      myButtons.appendChild(letters);
-      letters.appendChild(list);
+      myButtons.appendChild(letters1);
+      letters1.appendChild(list);
     }
+    for (var j = 0; j < keyRow2.length; j++) {
+      letters2.className = 'keyRow';
+      list = document.createElement('li');
+      list.id = 'letter';
+      list.innerHTML = keyRow2[j];
+      check();
+      myButtons.appendChild(letters2);
+      letters2.appendChild(list);
+    }
+    for (var k = 0; k < keyRow3.length; k++) {
+      letters3.className = 'keyRow';
+      list = document.createElement('li');
+      list.id = 'letter';
+      list.innerHTML = keyRow3[k];
+      check();
+      myButtons.appendChild(letters3);
+      letters3.appendChild(list);
+    }
+
   }
 
   // Select Catagory
