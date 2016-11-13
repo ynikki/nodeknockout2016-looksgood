@@ -37,7 +37,6 @@ window.onload = function () {
   /// Animating the face when player lost ///
   var unhappyFace = document.getElementById('mouth');
 
-
   // create alphabet ul
   var buttons = function () {
     myButtons = document.getElementById('letter-buttons');
@@ -53,7 +52,6 @@ window.onload = function () {
       letters.appendChild(list);
     }
   }
-
 
   document.getElementById("categories").onchange = function() {
     var catValue = document.getElementById("categories").value;
@@ -125,8 +123,48 @@ window.onload = function () {
     }
   }
 
+  // OnKeyPress Function
+  function typeAnswer(){
+    window.onkeypress = function(){
+      var geuss = (event.key);
+      var allKeys = document.getElementsByClassName("letter-keys");
+      for (var i = 0; i < allKeys[0].children.length; i++) {
+        var settingAttributeHTML = allKeys[0].children[i].innerHTML;
+        if (geuss === settingAttributeHTML){
+          var settingAttribute = allKeys[0].children[i];
+          settingAttribute.setAttribute("class", "active");
+        }
+      }
+      check();
+      for (var i = 0; i < word.length; i++) {
+        if (word[i] === geuss) {
+          tries[i].innerHTML = geuss;
+          counter += 1;
+        }
+      }
+      var j = (word.indexOf(geuss));
+      var lifeBar = document.getElementById('health');
+      if (j === -1) {
+        hp -= 1;
+        lifeBar.value--;
+        comments();
+      } else {
+        comments();
+      }
+    };
+  }
+
   // OnClick Function
   check = function () {
+    // var lifeBar = document.getElementById('health');
+    var unhappyFace = document.getElementById('mouth');
+    var leftEye = document.getElementById('leftEye');
+    var rightEye = document.getElementById('rightEye');
+    var firstPetal = document.getElementById('petalOne');
+    var secondPetal = document.getElementById('petalTwo');
+    var thirdPetal = document.getElementById('petalThree');
+    var fourthPetal = document.getElementById('petalFour');
+    var fifthPetal = document.getElementById('petalFive');
     list.onclick = function () {
       var geuss = (this.innerHTML);
       this.setAttribute("class", "active");
@@ -142,6 +180,24 @@ window.onload = function () {
       if (j === -1) {
         hp -= 1;
         lifeBar.value--;
+        if(lifeBar.value === 4){
+          firstPetal.style.display = "none";
+        }else if(lifeBar.value === 3){
+          secondPetal.style.display = "none";
+        }else if(lifeBar.value === 2){
+          thirdPetal.style.display = "none";
+          unhappyFace.style.transform = "rotate(180deg)";
+          unhappyFace.style.marginTop = "47px";
+          unhappyFace.style.transitionTimingFunction = "ease";
+        }else if(lifeBar.value === 1){
+          fourthPetal.style.display = "none";
+        }else if(lifeBar.value === 0) {
+          fifthPetal.style.display = "none";
+          leftEye.style.height = "5px";
+          leftEye.style.marginTop = "32px";
+          rightEye.style.height = "5px";
+          rightEye.style.marginTop = "32px";
+        }
         comments();
       } else {
         comments();
@@ -178,6 +234,7 @@ window.onload = function () {
 
     word = chosenCategory[Math.floor(Math.random() * chosenCategory.length)];
     word = word.replace(/\s/g, "-");
+    console.log(word);
     buttons();
 
     tries = [ ];
@@ -188,8 +245,13 @@ window.onload = function () {
     result();
     comments();
     selectCat();
+    typeAnswer();
   };
   play();
+
+  function testing() {
+    console.log('hi');
+  }
 
   // Hint
   hint.onclick = function() {

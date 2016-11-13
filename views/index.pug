@@ -7,7 +7,6 @@ html(lang="en")
     link(href='/css/styles.css', rel='stylesheet')
     script(src="https://code.jquery.com/jquery-2.2.4.min.js")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/jquerykeyframes/0.0.9/jquery.keyframes.min.js")
-    script(src="/js/animate.js")
   body
     div.container
       div.artwork-container
@@ -38,11 +37,11 @@ html(lang="en")
       div.flower-container
         div.flower-wrapper
           div.petal-wrapper
-            div.petal
-            div.petal
-            div.petal
-            div.petal
-            div.petal
+            div(class="petal" id="petalOne")
+            div(class="petal" id="petalTwo")
+            div(class="petal" id="petalThree")
+            div(class="petal" id="petalFour")
+            div(class="petal" id="petalFive")
           div.core
             div.smiley
               div(id="leftEye" class="eye")
@@ -51,4 +50,5 @@ html(lang="en")
           span(class="stem")
       div.footer
         p Copyright &copy; 2016 Word Garden. All Rights Reserved
+    script(src='/js/animate.js')
     script(src='/hangman.js')
