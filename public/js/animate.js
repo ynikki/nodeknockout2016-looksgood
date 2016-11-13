@@ -3,20 +3,20 @@ var supportedFlag = $.keyframe.isSupported();
 $.keyframe.define([
   {
     name: 'leftEyeBlink',
-      '0%': {
-        'height': '20px',
-        'margin-top': '25px'
-      },
-      '50%': {
-        'height': '2px',
-        'width': '12px',
-        'margin-left': '12px',
-        'margin-top': '40px'
-      },
-      '100%': {
-        'height': '20px',
-        'margin-top': '25px'
-      }
+    '0%': {
+      'height': '20px',
+      'margin-top': '25px'
+    },
+    '50%': {
+      'height': '2px',
+      'width': '12px',
+      'margin-left': '12px',
+      'margin-top': '40px'
+    },
+    '100%': {
+      'height': '20px',
+      'margin-top': '25px'
+    }
   },
   {
     name: 'rightEyeBlink',
