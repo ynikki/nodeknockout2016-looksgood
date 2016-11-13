@@ -2,6 +2,42 @@
 @import 'partials/clearfix';
 @import 'partials/colors';
 @import 'partials/words';
+@import 'partials/flower';
+
+@mixin transformation($tY, $tX, $r, $sk, $sc){
+  transform:
+    translateY($tY)
+    translateX($tX)
+    rotate($r)
+    skewX($sk)
+    scale($sc);
+}
+
+// .container{
+//   background: linear-gradient($sky, $skyBottom);
+//   background: -webkit-linear-gradient($sky, $skyBottom);
+//   background: -o-linear-gradient($sky, $skyBottom);
+//   background: -moz-linear-gradient($sky, $skyBottom);
+// }
+progress{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 2px;
+  width: 250px;
+  height: 20px;
+}
+progress[value]::-webkit-progress-bar{
+  background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+progress[value]::-webkit-progress-value{
+  background-color: $progressBar;
+  border-radius: 2px;
+  background-size: 35px 20px, 100% 100%, 100% 100%;
+}
 
 body {
   background-color: $white;
@@ -114,11 +150,118 @@ body {
   0% {margin-left: 1000px;}
   100% {margin-left: -1000px;}
 }
-.ground{
+
+.flower-container{
+  position: relative;
+}
+.flower-wrapper{
+  width: $w;
+  height: $h;
+  border-radius: 0%;
+  margin: 0 auto;
+}
+
+.core{
   position: absolute;
-  bottom: 0;
+  display: inline-block;
+  justify-content: center;
+  top: ($h - $ch)/2;
+  left: ($w - $cw)/2;
+  width: $cw;
+  height: $ch;
+  background: $core-col;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: opacity 0.25s eas-in-out;
+  opacity: 1;
+}
+
+.petal-wrapper{
+  position: absolute;
+  top: 0;
   left: 0;
-  background-color: $grass;
+  width: $w;
+  height: $h;
+}
+
+.petal{
+  position: absolute;
+  width: $pw + 3em;
+  height: $ph + 2em;
+  background: $petal-col;
+  border-radius: 0 50% 50% 50%;
+  box-shadow: -2px 2px 20px;
+  box-shadow: -2px -2px 20px rgba(255,255,255,0.5) 
+    inset,
+    0px 0px 2px rgba(0,0,0,0.5);
+  box-sizing: border-box;
+  justify-content: center;
+  overflow: hidden;
+  transition: opacity 0.25s ease-in-out;
+  opacity: 1;
+
+  @for $i from 1 through $np {
+    &:nth-child(#{$i}) {
+      animation: ani#{$i} $anim-time ease-in-out infinite;
+      animation-delay: ($i - 1) * $anim-time / $np;
+      @include transformation(
+        ($h - $ph) / 2 + $off * sin(($i - 1) * $angle-incr),
+        ($w - $pw) / 2 + $off * cos(($i - 1) * $angle-incr),
+        -$alpha + ($i - 1) * $angle-incr,
+        $alpha,
+        1
+      );
+    }
+  }
+}
+
+@for $i from 1 through $np {
+  @keyframes ani#{$i} {
+    0% {
+      @include transformation(
+        ($h - $ph) / 2 + $off * sin(($i - 1) * $angle-incr),
+        ($w - $pw) / 2 + $off * cos(($i - 1) * $angle-incr),
+        -$alpha + ($i - 1) * $angle-incr,
+        $alpha,
+        1
+      );
+    }
+
+    50% {
+      @include transformation(
+        ($h - $ph) / 2 + $off-ani * sin(($i - 1) * $angle-incr),
+        ($w - $pw) / 2 + $off-ani * cos(($i - 1) * $angle-incr),
+        -$alpha + ($i - 1) * $angle-incr,
+        $alpha,
+        $sf
+      );
+    }
+
+    100% {
+      @include transformation(
+        ($h - $ph) / 2 + $off * sin(($i - 1) * $angle-incr),
+        ($w - $pw) / 2 + $off * cos(($i - 1) * $angle-incr),
+        -$alpha + ($i - 1) * $angle-incr,
+        $alpha,
+        1
+      );
+    }
+  }
+}
+
+.ground-container{
+  bottom: 0;
+}
+.grass{
+  background-image: url('/images/grass.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 200px;
+}
+.ground{
+  left: 0;
+  background-color: $;
   height: 250px;
   width: 100%;
   bottom: 0;
