@@ -4,10 +4,11 @@
   "description": "A barebones Node.js app using Express 4",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "./node_modules/.bin/gulp default && node index.js"
   },
   "dependencies": {
     "express": "^4.13.3",
+    "gulp": "^3.9.1",
     "pug": "^2.0.0-beta6"
   },
   "engines": {
