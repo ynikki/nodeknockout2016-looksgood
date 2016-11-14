@@ -186,14 +186,21 @@ window.onload = function () {
       // leftEye.style.marginTop = "32px";
       // rightEye.style.height = "5px";
       // rightEye.style.marginTop = "32px";
+      var doneLeye = document.createElement("div");
+      doneLeye.id = "closeEye";
       var closeLeye = document.getElementById('leftEye');
-      closeLeye.removeAttribute();
-      closeLeye.className = 'close';
-      closeLeye.style.marginLeft = "3px";
+      var parentDiv = closeLeye.parentNode;
+      parentDiv.replaceChild(doneLeye, closeLeye);
+      doneLeye.className = 'close';
+      doneLeye.style.marginLeft = "3px";
+      var doneReye = document.createElement("div");
+      doneReye.id = "closeReye";
       var closeReye = document.getElementById('rightEye');
-      closeReye.removeAttribute();
-      closeReye.className = 'close';
-      closeReye.style.marginLeft = "43px";
+      var otherParentDiv = closeReye.parentNode;
+      otherParentDiv.replaceChild(doneReye, closeReye);
+      doneReye.className = 'close';
+      doneReye.style.marginLeft = "43px";
+      unhappyFace.style.marginTop = "50px";
     }
   }
 
