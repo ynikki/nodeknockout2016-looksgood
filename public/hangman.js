@@ -182,10 +182,18 @@ window.onload = function () {
       $("#petalFour").fadeOut(500);
     }else if(lifeBar.value === 0) {
       $("#petalFive").fadeOut(500);
-      leftEye.style.height = "5px";
-      leftEye.style.marginTop = "32px";
-      rightEye.style.height = "5px";
-      rightEye.style.marginTop = "32px";
+      // leftEye.style.height = "5px";
+      // leftEye.style.marginTop = "32px";
+      // rightEye.style.height = "5px";
+      // rightEye.style.marginTop = "32px";
+      var closeLeye = document.getElementById('leftEye');
+      closeLeye.removeAttribute();
+      closeLeye.className = 'close';
+      closeLeye.style.marginLeft = "3px";
+      var closeReye = document.getElementById('rightEye');
+      closeReye.removeAttribute();
+      closeReye.className = 'close';
+      closeReye.style.marginLeft = "43px";
     }
   }
 
@@ -230,10 +238,6 @@ window.onload = function () {
     typeAnswer();
   };
   play();
-
-  function testing() {
-    console.log('hi');
-  }
 
   // Hint
   hint.onclick = function() {
