@@ -214,11 +214,34 @@ body {
   margin-top: 25px;
 }
 #leftEye{
-  margin-left: 15px;
+  margin-left: 14px;
 }
 #rightEye{
   margin-left: 55px;
 }
+.close{
+  position: absolute;
+  display: block;
+  width: 18px;
+  height: 18px;
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    margin-top: 33px;
+    background: $eye;
+    border-radius: 5px;
+  }
+  &::before {
+    transform: rotate(45deg);
+  }
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+
+
 #mouth{
   margin-top: -57px;
   border: solid 4px $eye;
