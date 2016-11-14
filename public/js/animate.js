@@ -9,7 +9,7 @@ $.keyframe.define([
     },
     '50%': {
       'height': '2px',
-      'width': '12px',
+      'width': '14px',
       'margin-left': '12px',
       'margin-top': '40px'
     },
