@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Word Garden | 2016 Node Knockout</title>
+  <link href="/css/styles.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script type="https://cdnjs.cloudflare.com/ajax/libs/jquerykeyframes/0.0.9/jquery.keyframes.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="nodeknockout-container">
+      <a href="https://www.nodeknockout.com/entries/277-looks-good" target= "_blank">
+        <img src="/images/voteko.png"/>
+      </a>
+    </div>
+    <div class="artwork-container">
+      <div id="cloud" class="cloud-background">
+        <div class="cloud move-1"></div>
+        <div class="cloud move-2"></div>
+        <div class="cloud move-3"></div>
+        <div class="cloud move-4"></div>
+      </div>
+      <div class="flower-container">
+        <div class="flower-wrapper">
+          <div class="petal-wrapper">
+            <div class="petal" id="petalOne"></div>
+            <div class="petal" id="petalTwo"></div>
+            <div class="petal" id="petalThree"></div>
+            <div class="petal" id="petalFour"></div>
+            <div class="petal" id="petalFive"></div>
+          </div>
+          <div class="core">
+            <div class="smiley">
+              <div id="leftEye" class="eye"></div>
+              <div id="rightEye" class="eye"></div>
+              <div id="mouth"></div>
+            </div>
+          </div>
+        </div>
+        <span class="stem"></span>
+      </div>
+      <div class="grass-container">
+        <div class="grass"></div>
+      </div>
+    </div>
+    <div class="game-container">
+      <div class="progress-container">
+        <progress id="health" value="5" max="5"></progress>
+        <p id="myhp" class="hp-value"></p>
+      </div>
+      <div id="word-holder" class="word-category"></div>
+      <div id="end-img"></div>
+      <p id="categoryName" class="word-category"></p>
+      <div class="dropdown">
+        <select id="categories">
+          <option value="" selected="true" disabled="disabled">
+            Select a category
+          </option>
+          <option id="categories" value="Javascript">
+            Javascript
+          </option>
+          <option id="categories" value="CSS/HTML">
+            CSS/HTML
+          </option>
+          <option id="categories" value="Node.js">
+            Node.js
+          </option>
+        </select>
+      </div>
+      <div id="letter-buttons" class="alphabet-container"></div>
+      <button id="hint">
+        Hint
+      </button>
+      <button id="reset">
+        Play Again
+      </button>
+      <p id="clue" class="word-clue"></p>
+    </div>
+    <div class="footer">
+      <p>Copyright &copy; 2016 Word Garden. All Rights Reserved</p>
+    </div>
+  </div>
+  <script type="/js/animate.js"></script>
+  <script type="/hangman.js"></script>
+</body>
+</html>
