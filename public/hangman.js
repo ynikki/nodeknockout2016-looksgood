@@ -281,8 +281,6 @@ window.onload = function () {
       petal5.removeAttribute('style');
     var smile = document.getElementById('mouth');
       smile.removeAttribute('style');
-    // var eyeL = document.getElementById('leftEye');
-        // eyeL.removeAttribute('style');
     var openLeye = document.createElement("div");
         openLeye.id = "leftEye";
     var closeLeye = document.getElementById('closeEye');
