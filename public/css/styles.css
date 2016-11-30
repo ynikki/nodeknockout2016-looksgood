@@ -193,7 +193,7 @@ body {
   background-color: #FFFFFF; }
 
 .grass {
-  background-image: url("../images/grass.png");
+  background-image: url("/images/grass.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
