@@ -102,6 +102,18 @@ table {
 /* consider equilateral triangle*/
 /*number of petals */
 /* Mixin's */
+@keyframes blink {
+  0% {
+    transform: scale(1); }
+  5% {
+    transform: scale(1, 0.01); }
+  10% {
+    transform: scale(1); }
+  15% {
+    transform: scale(1, 0.01); }
+  20% {
+    transform: scale(1); } }
+
 * {
   box-sizing: border-box; }
 
@@ -193,7 +205,7 @@ body {
   background-color: #FFFFFF; }
 
 .grass {
-  background-image: url("../images/grass.png");
+  background-image: url("/images/grass.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -246,7 +258,8 @@ body {
   -webkit-border-radius: 100px;
   -moz-border-radius: 150px;
   position: absolute;
-  margin-top: 25px; }
+  margin-top: 25px;
+  animation: blink 5s infinite; }
 
 #leftEye {
   margin-left: 14px; }

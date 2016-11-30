@@ -4,6 +4,7 @@
 @import 'partials/words';
 @import 'partials/flower';
 @import 'partials/mixins';
+@import 'partials/animate';
 
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 // @font-face {
@@ -212,6 +213,7 @@ body {
   -moz-border-radius: 150px;
   position: absolute;
   margin-top: 25px;
+  animation: blink 5s infinite;
 }
 #leftEye{
   margin-left: 14px;
