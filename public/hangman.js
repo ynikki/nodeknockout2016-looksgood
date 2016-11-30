@@ -180,25 +180,13 @@ window.onload = function () {
       $("#petalFour").fadeOut(500);
     }else if(lifeBar.value === 0) {
       $("#petalFive").fadeOut(500);
-      // leftEye.style.height = "5px";
-      // leftEye.style.marginTop = "32px";
-      // rightEye.style.height = "5px";
-      // rightEye.style.marginTop = "32px";
-      var doneLeye = document.createElement("div");
-          doneLeye.id = "closeEye";
       var closeLeye = document.getElementById('leftEye');
-      var parentDiv = closeLeye.parentNode;
-          parentDiv.replaceChild(doneLeye, closeLeye);
-      doneLeye.className = 'close';
-      doneLeye.style.marginLeft = "3px";
-      var doneReye = document.createElement("div");
-          doneReye.id = "closeReye";
+          closeLeye.className = "close";
+          closeLeye.style.marginLeft = "3px";
       var closeReye = document.getElementById('rightEye');
-      var otherParentDiv = closeReye.parentNode;
-          otherParentDiv.replaceChild(doneReye, closeReye);
-      doneReye.className = 'close';
-      doneReye.style.marginLeft = "43px";
-      unhappyFace.style.marginTop = "50px";
+          closeReye.className = "close";
+          closeReye.style.marginLeft = "43px";
+        unhappyFace.style.marginTop = "50px";
     }
   }
 
@@ -280,18 +268,12 @@ window.onload = function () {
       petal5.removeAttribute('style');
     var smile = document.getElementById('mouth');
       smile.removeAttribute('style');
-    var openLeye = document.createElement("div");
-        openLeye.id = "leftEye";
-    // var closeLeye = document.getElementById('closeEye');
-    // var parentDiv = closeLeye.parentNode;
-    //     parentDiv.replaceChild(openLeye, closeLeye);
-    // openLeye.className = 'eye';
-    var openReye = document.createElement("div");
-        openReye.id = "rightEye";
-    // var closeReye = document.getElementById('closeReye');
-    // var otherParentDiv = closeReye.parentNode;
-    //     otherParentDiv.replaceChild(openReye, closeReye);
-    // openReye.className = 'eye';
+    var openLeye = document.getElementById('leftEye');
+        openLeye.className = "eye";
+        openLeye.removeAttribute('style');
+    var openReye = document.getElementById('rightEye');
+        openReye.className = "eye";
+        openReye.removeAttribute('style');
     play();
     flowerPetals();
   };
