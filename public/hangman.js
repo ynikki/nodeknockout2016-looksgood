@@ -4,7 +4,6 @@ window.onload = function () {
 
   var categories;         // Array of topics
   var chosenCategory;     // Selected catagory
-  // var getHint ;          // Word getHint
   var word ;              // Selected word
   var guess ;             // guess
   var tries = [ ];      // Stored tries
@@ -15,7 +14,6 @@ window.onload = function () {
   // Get elements
   var showhp = document.getElementById("myhp");
   var showCatagory = document.getElementById("categories");
-  // var getHint = document.getElementById("hint");
   var showClue = document.getElementById("clue");
   var lifeBar = document.getElementById('health');
 
