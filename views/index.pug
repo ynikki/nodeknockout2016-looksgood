@@ -41,6 +41,7 @@ html(lang="en")
         div(id="word-holder" class="word-container")
         div#end-img
         p(id="catagoryName" class="word-category")
+        p(id="clue" class="word-clue")
         div.dropdown
           select(id="categories")
             option(value="" selected="true" disabled="disabled") Select a category
@@ -50,7 +51,6 @@ html(lang="en")
         div(id="letter-buttons" class="alphabet-container")
         button#hint Hint
         button#reset Play Again
-        p(id="clue" class="word-clue")
       div.footer
         p Copyright &copy; 2016 Word Garden. All Rights Reserved
     script(src='/js/animate.js')
