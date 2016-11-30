@@ -246,8 +246,8 @@ window.onload = function () {
   };
   play();
 
-  // Hint
-  hint.onclick = function() {
+  // Function to show word hints
+  var wordHint = function() {
     hints = [
       ['Set of statements and performs a task', 'Container for data', 'Has keys and values', 'Lists of values', 'Arguments object'],
       ['Additional information for elements', 'Has contents of HTML document', 'Define property', 'Patterns to grab elements', 'Can apply the rainbow'],
