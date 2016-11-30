@@ -4,7 +4,6 @@ window.onload = function () {
 
   var categories;         // Array of topics
   var chosenCategory;     // Selected catagory
-  var getHint ;          // Word getHint
   var word ;              // Selected word
   var guess ;             // guess
   var tries = [ ];      // Stored tries
@@ -15,7 +14,6 @@ window.onload = function () {
   // Get elements
   var showhp = document.getElementById("myhp");
   var showCatagory = document.getElementById("categories");
-  var getHint = document.getElementById("hint");
   var showClue = document.getElementById("clue");
   var lifeBar = document.getElementById('health');
 
@@ -243,11 +241,12 @@ window.onload = function () {
     comments();
     selectCat();
     typeAnswer();
+    wordHint();
   };
   play();
 
-  // Hint
-  hint.onclick = function() {
+  // Function to show word hints
+  function wordHint() {
     hints = [
       ['Set of statements and performs a task', 'Container for data', 'Has keys and values', 'Lists of values', 'Arguments object'],
       ['Additional information for elements', 'Has contents of HTML document', 'Define property', 'Patterns to grab elements', 'Can apply the rainbow'],
