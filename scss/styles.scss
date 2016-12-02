@@ -491,8 +491,9 @@ button{
 }
 
 .word-clue{
-  font-size: 1rem;
-  color: lighten($black, 50%);
+  padding: 10px;
+  font-size: 0.75rem;
+  color: lighten($black, 33%);
 }
 
 .footer{
