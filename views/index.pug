@@ -33,21 +33,20 @@ html(lang="en")
                 div(id="mouth")
           span(class="stem")
         div.grass-container
-          div.grass
+          svg(height="100" width="100%")
+            path(d="M 0 100 l 0 -50 q 125 -25 250 0 q 150 25 300 0 q 125 -25 250 0 q 150 25 300 0 q 125 -25 250 0 q 150 25 300 0 q 125 -25 250 0 q 150 25 300 0 q 125 -25 250 0 q 150 25 300 0 q 125 -25 250 0 q 150 25 300 0 q 125 -25 250 0 q 150 25 300 0 q 125 -25 250 0 q 150 25 300 0 q 125 -25 250 0 q 150 25 300 0 q 125 -25 250 0 q 150 25 300 0 q 125 -25 250 0 q 150 25 300 0 q 125 -25 250 0 q 150 25 300 0 l 0 50 z" stroke="#CFF27B" stroke-width=" 5" fill="#CFF27B")
       div.game-container
         div.progress-container
           progress(id="health" value="5" max="5")
           p(id="myhp" class="hp-value")
         div(id="word-holder" class="word-container")
-        div#end-img
-        p(id="catagoryName" class="word-category")
-        p(id="clue" class="word-clue")
         div.dropdown
+          label Current Category:
           select(id="categories")
-            option(value="" selected="true" disabled="disabled") Select a category
             option#categories(value="Javascript") Javascript
             option#categories(value="CSS/HTML") CSS/HTML
             option#categories(value="Node.js") Node.js
+        p(id="clue" class="word-clue")
         div(id="letter-buttons" class="alphabet-container")
         button#reset Play Again
       div.footer

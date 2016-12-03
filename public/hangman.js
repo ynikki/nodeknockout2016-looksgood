@@ -227,7 +227,7 @@ window.onload = function () {
 
     result();
     comments();
-    selectCat();
+    // selectCat();
     typeAnswer();
     wordHint();
   };
@@ -243,7 +243,7 @@ window.onload = function () {
 
     var catagoryIndex = categories.indexOf(chosenCategory);
     var hintIndex = chosenCategory.indexOf(word);
-    showClue.innerHTML = "*Hint: " +  hints [catagoryIndex][hintIndex] + '*';
+    showClue.innerHTML = "*HINT: " +  hints [catagoryIndex][hintIndex] + '*';
   };
 
    // Reset

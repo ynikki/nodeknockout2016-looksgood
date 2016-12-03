@@ -157,18 +157,11 @@ body {
 .grass-container{
   background-color: $white;
 }
-.grass{
-  background-image: url('/images/grass.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 125px;
-}
 
 // ***Flower Artwork*** //
 .flower-container{
   position: relative;
-  top: -165px;
+  top: -200px;
   margin-bottom: -175px;
   margin-left: calc(50% - 140px);
 }
@@ -427,9 +420,13 @@ body {
     font-size:1.6em;
   }
 }
-.word-category{
-  font-size: 1rem;
-  color: lighten($black, 50%);
+
+.dropdown{
+  margin: 5px;
+  label{
+    font-size: 1rem;
+    color: lighten($black, 50%);
+  }
 }
 
 // ***Letter Buttons*** //
@@ -491,8 +488,9 @@ button{
 }
 
 .word-clue{
-  font-size: 1rem;
-  color: lighten($black, 50%);
+  margin: 10px;
+  font-size: 0.75rem;
+  color: lighten($black, 33%);
 }
 
 .footer{
