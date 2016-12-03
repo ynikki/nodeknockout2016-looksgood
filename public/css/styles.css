@@ -204,16 +204,9 @@ body {
 .grass-container {
   background-color: #FFFFFF; }
 
-.grass {
-  background-image: url("/images/grass.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 125px; }
-
 .flower-container {
   position: relative;
-  top: -165px;
+  top: -200px;
   margin-bottom: -175px;
   margin-left: calc(50% - 140px); }
 
@@ -463,9 +456,11 @@ body {
     padding: 0 10px;
     font-size: 1.6em; }
 
-.word-category {
-  font-size: 1rem;
-  color: gray; }
+.dropdown {
+  margin: 5px; }
+  .dropdown label {
+    font-size: 1rem;
+    color: gray; }
 
 .alphabet-container {
   margin: 15px auto; }
@@ -529,8 +524,9 @@ button {
     color: #c1d72e; }
 
 .word-clue {
-  font-size: 1rem;
-  color: gray; }
+  margin: 10px;
+  font-size: 0.75rem;
+  color: #545454; }
 
 .footer {
   padding: 10px;
