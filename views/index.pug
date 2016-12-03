@@ -41,14 +41,15 @@ html(lang="en")
           p(id="myhp" class="hp-value")
         div(id="word-holder" class="word-container")
         div#end-img
-        p(id="catagoryName" class="word-category")
-        p(id="clue" class="word-clue")
+        //- p(id="catagoryName" class="word-category")
         div.dropdown
+          label Current Category:
           select(id="categories")
-            option(value="" selected="true" disabled="disabled") Select a category
+            //- option(value="" selected="true" disabled="disabled") Select a category
             option#categories(value="Javascript") Javascript
             option#categories(value="CSS/HTML") CSS/HTML
             option#categories(value="Node.js") Node.js
+        p(id="clue" class="word-clue")
         div(id="letter-buttons" class="alphabet-container")
         button#reset Play Again
       div.footer
