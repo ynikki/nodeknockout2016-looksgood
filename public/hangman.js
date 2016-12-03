@@ -227,7 +227,7 @@ window.onload = function () {
 
     result();
     comments();
-    selectCat();
+    // selectCat();
     typeAnswer();
     wordHint();
   };
