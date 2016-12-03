@@ -420,6 +420,14 @@ body {
     font-size:1.6em;
   }
 }
+
+.dropdown{
+  margin: 5px;
+  label{
+    font-size: 1rem;
+    color: lighten($black, 50%);
+  }
+}
 .word-category{
   font-size: 1rem;
   color: lighten($black, 50%);
@@ -484,7 +492,7 @@ button{
 }
 
 .word-clue{
-  padding: 10px;
+  margin: 10px;
   font-size: 0.75rem;
   color: lighten($black, 33%);
 }
