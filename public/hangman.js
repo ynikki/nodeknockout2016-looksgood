@@ -20,6 +20,28 @@ window.onload = function () {
   /// Animating the face when player lost ///
   var unhappyFace = document.getElementById('mouth');
 
+  /// Flower elements ///
+  function createFlower(){
+    var petal1 = document.getElementById('petalOne');
+      petal1.removeAttribute('style');
+    var petal2 = document.getElementById('petalTwo');
+      petal2.removeAttribute('style');
+    var petal3 = document.getElementById('petalThree');
+      petal3.removeAttribute('style');
+    var petal4 = document.getElementById('petalFour');
+        petal4.removeAttribute('style');
+    var petal5 = document.getElementById('petalFive');
+      petal5.removeAttribute('style');
+    var smile = document.getElementById('mouth');
+      smile.removeAttribute('style');
+    var openLeye = document.getElementById('leftEye');
+        openLeye.className = "eye";
+        openLeye.removeAttribute('style');
+    var openReye = document.getElementById('rightEye');
+        openReye.className = "eye";
+        openReye.removeAttribute('style');
+  }
+
   // create alphabet ul
   var buttons = function () {
     myButtons = document.getElementById('letter-buttons');
@@ -203,12 +225,21 @@ window.onload = function () {
 
     if (HTMLCategory === "Javascript") {
       var numCategory = 0;
+      hp = 5;
+      lifeBar.value = 5;
+      createFlower();
     }
     else if (HTMLCategory === "CSS/HTML") {
       var numCategory = 1;
+      hp = 5;
+      lifeBar.value = 5;
+      createFlower();
     }
     else if (HTMLCategory === "Node.js"){
       var numCategory = 2;
+      hp = 5;
+      lifeBar.value = 5;
+      createFlower();
     }
     else {
       var numCategory = Math.floor(Math.random() * categories.length);
@@ -238,7 +269,7 @@ window.onload = function () {
     hints = [
       ['Set of statements and performs a task', 'Container for data', 'Has keys and values', 'Lists of values', 'Arguments object'],
       ['Additional information for elements', 'Has contents of HTML document', 'Define property', 'Patterns to grab elements', 'Can apply the rainbow'],
-      ['IP address', 'Number server uses for url', 'Processes requests', 'Hear', 'Can build network applications']
+      ['IP address', 'Number to identify a specific process to which a network message is forwarded', 'Processes requests', 'Hear', 'Can build network applications']
     ];
 
     var catagoryIndex = categories.indexOf(chosenCategory);
